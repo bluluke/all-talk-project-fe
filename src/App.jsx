@@ -1,12 +1,12 @@
 import './App.css'
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from './Components/Header'
 
 
 function App() {
+  const [message, setMessage] = useState('');
+  const ws = new WebSocket('ws://localhost:9020/websocket');
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:9020/websocket');
-
     ws.onopen = () => {
       console.log('WebSocket connected');
     };
@@ -20,6 +20,15 @@ function App() {
     };
   }, []);
 
+  const handleSendMessage = (e) => {
+    e.preventDefault()
+    if(message.trim() !== '') {
+      ws.send(JSON.stringify({ type: 'user_message', content: message }));
+
+      setMessage('');
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -29,8 +38,8 @@ function App() {
 
           </div>
           <form id="message-form">
-              <input id="message-box" placeholder="write message here"></input>
-              <button id="submit-message">Submit</button>
+              <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
+              <button id="submit-message" onClick={handleSendMessage}>Submit</button>
           </form>
       </div> 
     </div>
