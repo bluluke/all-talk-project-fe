@@ -1,36 +1,46 @@
 import './App.css'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Header } from './Components/Header'
 
-const username = prompt('Tell us your name!');
+
+const username = prompt('What is your name?');
 
 function App() {
   const [message, setMessage] = useState('');
   const [messageList, setMessageList] = useState([]);
+  const [ws, setWs] = useState(null);
+  const isWebSocketConnected = useRef(false)
 
-  const ws = new WebSocket('ws://localhost:9020/websocket');
+
   useEffect(() => {
-    ws.onopen = () => {
-      console.log('WebSocket connected');
-    };
+    if(!isWebSocketConnected.current) {
+      isWebSocketConnected.current = true;
+      const newWs = new WebSocket('ws://localhost:9020/websocket');
 
-    ws.onmessage = (event) => {
-      const parsedEventData = JSON.parse(event.data);
-      setMessageList((prevMessageList) => [...prevMessageList, { type: parsedEventData.type, content: parsedEventData.content, username: parsedEventData.username }]);
-    };
+      newWs.onopen = () => {
+        console.log('WebSocket connected');
+        setWs(newWs)
+      };
 
-    ws.onclose = () => {
-      console.log('WebSocket disconnected')
-    };
-  }, []);
+      newWs.onmessage = (event) => {
+        const parsedEventData = JSON.parse(event.data);
+        setMessageList((prevMessageList) => [...prevMessageList, parsedEventData])
+      };
+
+      newWs.onclose = () => {
+        console.log('WebSocket disconnected')
+      };
+   }
+  }, [isWebSocketConnected]);
 
   const handleSendMessage = (e) => {
     e.preventDefault()
+     
     if(message.trim() !== '') {
+      setMessageList((prevMessageList) => [...prevMessageList, { type: 'user_message', content: message, username: username }]);
       ws.send(JSON.stringify({ type: 'user_message', content: message, username: username }));
 
       setMessage('');
-      console.log('messageList: ', messageList);
     }
   };
 
