@@ -48,6 +48,17 @@ export const postChat = (chatName, chatCreator) => {
     })
 }
 
+export const postMessage = (id, senderName, messageContent) => {
+    const postRequestBody = {
+        senderName,
+        messageContent
+    };
+    const endpoint = `/chats/${id}/messages`;
+    return allTalkApi.post(endpoint, postRequestBody)
+    .then((res) => {
+        return res.data.result
+    })
+}
 
 
 
