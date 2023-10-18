@@ -28,6 +28,17 @@ export const getChatsNames = () => {
     })
 }
 
+export const getSingleChat = (id) => {
+    const endpoint = `/chats/${id}`
+    return allTalkApi.get(endpoint).then((res) => {
+        console.log('res.data.chat', res.data.chat);
+        return res.data.chat
+    })
+}
+
+
+
+
 
 
 
