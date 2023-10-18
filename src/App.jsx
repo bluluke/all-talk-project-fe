@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import './App.css'
 import { Header } from './Components/Header'
 import { SingleChat } from './pages/SingleChat';
+import { Home } from './pages/Home'
 
 
 const username = prompt('What is your name?');
@@ -14,6 +15,7 @@ function App() {
     <div>
       <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="chats/:chatid" element={<SingleChat username={username}/>} />
       </Routes>
     </div>
