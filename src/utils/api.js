@@ -21,5 +21,13 @@ export const getChats = (fromDate, toDate) => {
     })
 }
 
+export const getChatsNames = () => {
+    const endpoint = '/chats/names'
+    return allTalkApi.get(endpoint).then((res) => {
+        return res.data.names;
+    })
+}
 
+
+getChatsNames()
 
