@@ -1,5 +1,10 @@
-export const ChatCard = () => {
+export const ChatCard = ({ _id, chatName, timeOfcreation }) => {
     return (
-        <p>ChatCard</p>
+        <li>
+            <section className="chat-card">
+                <h2 className="chat-card-heading">{chatName}</h2>
+
+            </section>
+        </li>
     )
 }

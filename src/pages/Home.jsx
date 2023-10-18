@@ -4,7 +4,7 @@ export const Home = () => {
 
     return (
         <div>
-            <p>This is the home page. </p>
+            <h3>Choose a chat to join</h3>
             <ChatList />
         </div>
     )

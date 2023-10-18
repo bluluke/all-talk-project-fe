@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { getChatsNames } from "../utils/api";
 import { ChatCard } from './ChatCard';
 
@@ -14,9 +15,15 @@ getChatsNames().then((data) => {
 }, [])
 if(isLoading) return <p>Loading... </p>;
 return (
-    <div>
-        <ChatCard />
-    </div>
+    <section id="chat-list-container">
+        <ul id="chat-list">
+           {chatsNames.map(({ _id, chatName, timeOfCreation}) => {
+                return <Link to={`/chats/${_id}`} key={_id} className='chat-link'>
+                    <ChatCard _id={_id} chatName={chatName} timeOfCreation={timeOfCreation} />
+                </Link>
+           })}
+        </ul>
+    </section>
 )
 }
   
