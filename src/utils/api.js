@@ -59,7 +59,16 @@ export const postMessage = (id, senderName, messageContent) => {
     })
 }
 
-
+export const patchMessage = (chatId, messageId, messageContent) => {
+    const endpoint = `/chats/${chatId}/messages/${messageId}`
+    const patchRequestBody = {
+        messageContent
+    }
+    return allTalkApi.patch(endpoint, patchRequestBody)
+    .then((res) => {
+        return res.data.result;
+    })
+}
 
 
 
