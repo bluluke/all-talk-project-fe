@@ -70,7 +70,13 @@ export const patchMessage = (chatId, messageId, messageContent) => {
     })
 }
 
-
+export const deleteChat = (id) => {
+    const endpoint = `/chats/${id}`
+    return allTalkApi.delete(endpoint)
+    .then((res) => {
+        return res.data.result;
+    })
+}
 
 
 
