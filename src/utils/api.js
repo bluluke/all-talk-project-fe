@@ -36,6 +36,19 @@ export const getSingleChat = (id) => {
     })
 }
 
+export const postChat = (chatName, chatCreator) => {
+    const postRequestBody = {
+        chatName,
+        chatCreator
+    };
+    const endpoint = `/chats`
+    return allTalkApi.post(endpoint, postRequestBody)
+    .then((res) => {
+        return res.data.result
+    })
+}
+
+
 
 
 
