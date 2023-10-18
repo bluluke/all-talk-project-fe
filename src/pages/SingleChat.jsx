@@ -13,8 +13,7 @@ export const SingleChat = ({username}) => {
     useEffect(() => {
       if(!isWebSocketConnected.current) {
         isWebSocketConnected.current = true;
-        const newWs = new WebSocket('ws://localhost:9020/websocket');
-  
+        const newWs = new WebSocket('wss://all-talk-api.onrender.com/websocket');
         newWs.onopen = () => {
           console.log('WebSocket connected');
           setWs(newWs)
