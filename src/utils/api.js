@@ -78,5 +78,12 @@ export const deleteChat = (id) => {
     })
 }
 
+export const deleteMessage = (chatId, messageId) => {
+    const endpoint = `/chats/${chatId}/messages/${messageId}`
+    return allTalkApi.delete(endpoint)
+    .then((res) => {
+        return res.data.result;
+    })
+}
 
 
