@@ -1,8 +1,8 @@
-export const MessageCard = () => {
+export const MessageCard = ({_id, senderName, messageContent}) => {
     return (
-        <div>
-            <p>senderName: MessageContent</p>
-            <p>timeOfSending</p>
-        </div>
+       <div className="message-card">
+            <p>{senderName}: {messageContent}</p>
+            <p>Sent at </p>
+       </div>
     )
 }

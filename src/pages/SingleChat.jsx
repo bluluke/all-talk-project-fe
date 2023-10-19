@@ -1,7 +1,7 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect, useRef} from 'react';
 import { getSingleChat } from "../utils/api";
-
+import { MessageList } from "./MessageList";
 
 export const SingleChat = ({username}) => {
 
@@ -57,11 +57,7 @@ export const SingleChat = ({username}) => {
         <div id="chat-container">
             <h2>{chatData.chatName}</h2>
             <h3>Created by {chatData.chatCreator}</h3>
-            <div id="messages-container">
-              {messageList.map((message, index) => (
-                <p key={index}>{message.senderName}: {message.messageContent}</p>
-              ))}
-            </div>
+            <MessageList messageList={messageList}/>
             <form id="message-form">
                 <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                 <button id="submit-message" onClick={handleSendMessage}>Submit</button>
