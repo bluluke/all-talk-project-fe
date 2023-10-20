@@ -86,4 +86,11 @@ export const deleteMessage = (chatId, messageId) => {
     })
 }
 
-
+export const generateMongoObjectId = () => {
+    const timestamp = (new Date().getTime() / 1000 | 0).toString(16); 
+    const randomValue = Math.floor(Math.random() * 16777216).toString(16).padStart(6, '0'); 
+    const incrementingCounter = Math.floor(Math.random() * 16777216).toString(16).padStart(6, '0'); 
+  
+    return timestamp + '000000' + randomValue + incrementingCounter;;            
+  }
+  
