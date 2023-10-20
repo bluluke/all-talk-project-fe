@@ -51,7 +51,6 @@ export const SingleChat = ({username}) => {
     };
   
     if(isLoading) return <p>Loading... </p>
-    console.log('MessageList: ', messageList);
     return (
       <div>
         <div id="chat-container">
