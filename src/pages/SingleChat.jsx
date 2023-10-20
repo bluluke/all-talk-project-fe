@@ -43,8 +43,8 @@ export const SingleChat = ({username}) => {
       e.preventDefault()
        
       if(message.trim() !== '') {
-        setMessageList((prevMessageList) => [...prevMessageList, { type: 'user_message', messageContent: message, senderName: username, timeOfSending: Date.now() }]);
-        ws.send(JSON.stringify({ type: 'user_message', messageContent: message, senderName: username, timeOfSending: Date.now() }));
+        setMessageList((prevMessageList) => [...prevMessageList, { type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: Date.now(), i: 0 }}}]);
+        ws.send(JSON.stringify({ type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: Date.now(), i: 0 }}}));
   
         setMessage('');
       }
