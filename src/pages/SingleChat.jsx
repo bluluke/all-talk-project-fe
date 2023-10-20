@@ -1,9 +1,13 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect, useRef} from 'react';
-
-
+import { getSingleChat } from "../utils/api";
+import { MessageList } from "./MessageList";
 
 export const SingleChat = ({username}) => {
+
+    const { chatid } = useParams(); 
+    const [chatData, setChatData] = useState()
+    const [isLoading, setIsLoading ] = useState(true)
     const [message, setMessage] = useState('');
     const [messageList, setMessageList] = useState([]);
     const [ws, setWs] = useState(null);
@@ -11,6 +15,11 @@ export const SingleChat = ({username}) => {
   
   
     useEffect(() => {
+      getSingleChat(chatid).then((singleChatData) => {
+        setChatData(singleChatData)
+        setMessageList(singleChatData.messages)
+        setIsLoading(false)
+      })
       if(!isWebSocketConnected.current) {
         isWebSocketConnected.current = true;
         const newWs = new WebSocket('wss://all-talk-api.onrender.com/websocket');
@@ -34,22 +43,20 @@ export const SingleChat = ({username}) => {
       e.preventDefault()
        
       if(message.trim() !== '') {
-        setMessageList((prevMessageList) => [...prevMessageList, { type: 'user_message', content: message, username: username }]);
-        ws.send(JSON.stringify({ type: 'user_message', content: message, username: username }));
+        setMessageList((prevMessageList) => [...prevMessageList, { type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: Date.now(), i: 0 }}}]);
+        ws.send(JSON.stringify({ type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: Date.now(), i: 0 }}}));
   
         setMessage('');
       }
     };
   
+    if(isLoading) return <p>Loading... </p>
     return (
       <div>
         <div id="chat-container">
-            <h2>Chat Name</h2>
-            <div id="messages-container">
-              {messageList.map((message, index) => (
-                <p key={index}>{message.username}: {message.content}</p>
-              ))}
-            </div>
+            <h2>{chatData.chatName}</h2>
+            <h3>Created by {chatData.chatCreator}</h3>
+            <MessageList messageList={messageList}/>
             <form id="message-form">
                 <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                 <button id="submit-message" onClick={handleSendMessage}>Submit</button>
