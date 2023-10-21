@@ -47,12 +47,15 @@ export const postChat = (chatName, chatCreator) => {
     })
 }
 
-export const postMessage = (id, senderName, messageContent) => {
+export const postMessage = (chatId, _id, senderName, messageContent, timeOfSending) => {
     const postRequestBody = {
+        _id,
         senderName,
-        messageContent
+        messageContent,
+        timeOfSending: timeOfSending
     };
-    const endpoint = `/chats/${id}/messages`;
+    console.log('postRequestBody: ', postRequestBody);
+    const endpoint = `/chats/${chatId}/messages`;
     return allTalkApi.post(endpoint, postRequestBody)
     .then((res) => {
         return res.data.result
@@ -87,10 +90,10 @@ export const deleteMessage = (chatId, messageId) => {
 }
 
 export const generateMongoObjectId = () => {
-    const timestamp = (new Date().getTime() / 1000 | 0).toString(16); 
-    const randomValue = Math.floor(Math.random() * 16777216).toString(16).padStart(6, '0'); 
-    const incrementingCounter = Math.floor(Math.random() * 16777216).toString(16).padStart(6, '0'); 
+    const timestamp = (new Date().getTime() / 1000 | 0).toString(16).padStart(8, '0');
+    const randomValue = Math.floor(Math.random() * 16777216).toString(16).padStart(6, '0');
+    const incrementingCounter = Math.floor(Math.random() * 4096).toString(16).padStart(4, '0'); // 4 characters for the counter
   
-    return timestamp + '000000' + randomValue + incrementingCounter;;            
+    return (timestamp + randomValue + incrementingCounter).padEnd(24, '0');
   }
   
