@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom";
 import {useState, useEffect, useRef} from 'react';
 import { getSingleChat } from "../utils/api";
 import { MessageList } from "./MessageList";
-
+import { generateMongoObjectId } from "../utils/api";
 export const SingleChat = ({username}) => {
 
     const { chatid } = useParams(); 
@@ -44,8 +44,9 @@ export const SingleChat = ({username}) => {
        
       if(message.trim() !== '') {
         const timeNow = Date.now();
-        setMessageList((prevMessageList) => [...prevMessageList, { type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}]);
-        ws.send(JSON.stringify({ type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}));
+        const objectId = generateMongoObjectId();
+        setMessageList((prevMessageList) => [...prevMessageList, { _id: objectId, type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}]);
+        ws.send(JSON.stringify({ _id: objectId, type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}));
   
         setMessage('');
       }
