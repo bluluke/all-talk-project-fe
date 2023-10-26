@@ -63,7 +63,7 @@ export const SingleChat = ({username}) => {
         <div id="chat-container">
             <h2>{chatData.chatName}</h2>
             <h3>Created by {chatData.chatCreator}</h3>
-            <MessageList messageList={messageList}/>
+            <MessageList messageList={messageList} setMessageList={setMessageList} chatid={chatid}/>
             <form id="message-form">
                 <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                 <button id="submit-message" onClick={handleSendMessage}>Submit</button>
