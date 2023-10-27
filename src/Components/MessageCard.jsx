@@ -1,12 +1,13 @@
-import { deleteMessage } from "../utils/api"
+import { deleteMessage, getSingleChat } from "../utils/api"
+
 export const MessageCard = ({_id, senderName, messageContent, timeOfSending, setMessageList, chatid, username}) => {
     const handleDeleteMessage = () => {
-        deleteMessage(chatid, _id).then((data) => {
-        })
-        setMessageList((prevMessageList) => {
-            const updatedMessageList = prevMessageList.filter(message => message._id !== _id)
-            return updatedMessageList;
-        })
+        deleteMessage(chatid, _id).then(() => {
+        
+            getSingleChat(chatid).then((singleChatData) => {
+                setMessageList(singleChatData.messages)
+            });
+        });
     }
     return (
        <div className="message-card">
@@ -19,3 +20,5 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, set
          </div>
     )
 }
+
+
