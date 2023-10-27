@@ -1,12 +1,12 @@
 import { MessageCard } from "../Components/MessageCard";
 
-export const MessageList = ({messageList}) => {
+export const MessageList = ({messageList, setMessageList, chatid, username}) => {
     return (
         <section>
             <ul>
                 {messageList.map(({_id, senderName, messageContent, timeOfSending }) => {
                     return <div key={_id} className="individual-message-container">
-                        <MessageCard _id={_id} senderName={senderName} messageContent={messageContent} timeOfSending={new Date(timeOfSending.$timestamp.t).toLocaleString()}/>
+                        <MessageCard _id={_id} senderName={senderName} messageContent={messageContent} timeOfSending={new Date(timeOfSending.$timestamp.t).toLocaleString()} setMessageList={setMessageList} chatid={chatid} username={username} />
                     </div>
                 })}
             </ul>

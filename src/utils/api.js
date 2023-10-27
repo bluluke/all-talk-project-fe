@@ -54,7 +54,6 @@ export const postMessage = (chatId, _id, senderName, messageContent, timeOfSendi
         messageContent,
         timeOfSending: timeOfSending
     };
-    console.log('postRequestBody: ', postRequestBody);
     const endpoint = `/chats/${chatId}/messages`;
     return allTalkApi.post(endpoint, postRequestBody)
     .then((res) => {
