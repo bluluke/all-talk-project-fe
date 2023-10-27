@@ -4,14 +4,12 @@ import { ChatCard } from './ChatCard';
 import { deleteChat, getChatsNames } from "../utils/api"
 
 
-export const ChatList = ({username}) => {
-const [chatsNames, setChatsNames] = useState();
+export const ChatList = ({username, setChatsNames, chatsNames}) => {
 const [isLoading, setIsLoading] = useState(true)
 useEffect(() => {
 getChatsNames().then((data) => {
     setChatsNames(data)
     setIsLoading(false)
-
 })
 }, [])
 const handleDeletechat = (_id) => {
