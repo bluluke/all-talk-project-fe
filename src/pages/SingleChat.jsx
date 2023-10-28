@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom";
 import {useState, useEffect, useRef} from 'react';
 import { getSingleChat, postMessage } from "../utils/api";
 import { MessageList } from "./MessageList";
-import { generateMongoObjectId } from "../utils/api";
+import { generateMongoObjectId, deleteMessage } from "../utils/api";
 export const SingleChat = ({username}) => {
 
     const { chatid } = useParams(); 
@@ -57,13 +57,20 @@ export const SingleChat = ({username}) => {
       }
     };
   
+    const handleDeleteMessage = (_id) => {
+      deleteMessage(chatid, _id).then(() => {
+          getSingleChat(chatid).then((singleChatData) => {
+              setMessageList(singleChatData.messages)
+          })
+      })
+  }
     if(isLoading) return <p>Loading... </p>
     return (
       <div>
         <div id="chat-container">
             <h2>{chatData.chatName}</h2>
             <h3>Created by {chatData.chatCreator}</h3>
-            <MessageList messageList={messageList} setMessageList={setMessageList} chatid={chatid} username={username} />
+            <MessageList messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage}/>
             <form id="message-form">
                 <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                 <button id="submit-message" onClick={handleSendMessage}>Submit</button>
