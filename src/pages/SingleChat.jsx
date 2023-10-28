@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect, useRef} from 'react';
-import { getSingleChat, postMessage } from "../utils/api";
+import { getSingleChat, postMessage, patchMessage } from "../utils/api";
 import { MessageList } from "./MessageList";
 import { generateMongoObjectId, deleteMessage } from "../utils/api";
 export const SingleChat = ({username}) => {
@@ -46,7 +46,7 @@ export const SingleChat = ({username}) => {
           console.log('WebSocket disconnected')
         };
      }
-    }, [isWebSocketConnected]);
+    }, [isWebSocketConnected, messageList]);
   
     const handleSendMessage = (e) => {
       e.preventDefault()
@@ -65,7 +65,11 @@ export const SingleChat = ({username}) => {
         setMessage('');
       }
     };
-  
+    const handleEditMessage = (messageId, messageContent) => {
+      patchMessage(chatid, messageId, messageContent).then((data) => {
+
+      })
+    }
     const handleDeleteMessage = (_id) => {
       deleteMessage(chatid, _id).then(() => {
           getSingleChat(chatid).then((singleChatData) => {
@@ -82,7 +86,7 @@ export const SingleChat = ({username}) => {
         <div id="chat-container">
             <h2>{chatData.chatName}</h2>
             <h3>Created by {chatData.chatCreator}</h3>
-            <MessageList messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage}/>
+            <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage}/>
             <form id="message-form">
                 <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                 <button id="submit-message" onClick={handleSendMessage}>Submit</button>
