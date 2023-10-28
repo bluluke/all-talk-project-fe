@@ -30,14 +30,16 @@ export const Home = ({username}) => {
             <h3>Choose a chat to join</h3>
             <form onSubmit={handleCreateChat}>
                 <input
-                placeholder='Type name of new chat'
-                type="text"
-                value={newChatName}
-                onChange={((e) => setNewChatName(e.target.value))}
+                    id="chatNameInput"
+                    name="chatName"
+                    placeholder='Type name of new chat'
+                    type="text"
+                    value={newChatName}
+                    onChange={((e) => setNewChatName(e.target.value))}
                 >    
                 </input>
                  {nonWhiteSpaceCharactersRegex.test(newChatName)  &&
-                  <button >Click to create a new chat</button> 
+                  <button id="createChatButton">Click to create a new chat</button> 
                 }
                 {onlyWhiteSpaceCharactersPresentRegex.test(newChatName) && 
                 <p>Please enter a non-whitespace character</p>
