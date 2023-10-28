@@ -30,7 +30,16 @@ export const SingleChat = ({username}) => {
   
         newWs.onmessage = (event) => {
           const parsedEventData = JSON.parse(event.data);
-          setMessageList((prevMessageList) => [...prevMessageList, parsedEventData])
+          if(parsedEventData.type === 'user_message') {
+            setMessageList((prevMessageList) => [...prevMessageList, parsedEventData])
+          } if(parsedEventData.type === 'delete_message') {
+            setMessageList((previousMessageList) => {
+              const updatedMessageList = previousMessageList.filter((message) => {
+                return message._id !== parsedEventData._id;
+              })
+              return updatedMessageList
+            })
+          }
         };
   
         newWs.onclose = () => {
@@ -61,6 +70,9 @@ export const SingleChat = ({username}) => {
       deleteMessage(chatid, _id).then(() => {
           getSingleChat(chatid).then((singleChatData) => {
               setMessageList(singleChatData.messages)
+          })
+          .then(() => {
+            ws.send(JSON.stringify({ type: 'delete_message', _id: _id}))
           })
       })
   }
