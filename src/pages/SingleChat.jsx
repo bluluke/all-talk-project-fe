@@ -8,8 +8,10 @@ export const SingleChat = ({username}) => {
     const { chatid } = useParams(); 
     const [chatData, setChatData] = useState()
     const [isLoading, setIsLoading ] = useState(true)
+    const [editInProgress, setEditInProgress] = useState(false);   
     const [message, setMessage] = useState('');
     const [messageList, setMessageList] = useState([]);
+    const [idOfMessageToEdit, setIdOfMessageToEdit] = useState('');
     const [ws, setWs] = useState(null);
     const isWebSocketConnected = useRef(false)
   
@@ -60,7 +62,13 @@ export const SingleChat = ({username}) => {
       }
     };
     const handleEditMessage = (messageId, newMessageContent) => {
-      patchMessage(chatid, messageId, newMessageContent).then((data) => {
+      patchMessage(chatid, messageId, newMessageContent)
+      .then(() => {
+        getSingleChat(chatid).then((updatedChatData) => {
+          setMessageList(updatedChatData.messages)
+          setEditInProgress(false)  
+          setIdOfMessageToEdit('')
+        })
       })
     }
     const handleDeleteMessage = (_id) => {
@@ -79,7 +87,7 @@ export const SingleChat = ({username}) => {
           <div id="chat-container">
               <h2>{chatData.chatName}</h2>
               <h3>Created by {chatData.chatCreator}</h3>
-              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage}/>
+              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit}/>
               <form id="message-form">
                   <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                   <button id="submit-message" onClick={handleSendMessage}>Submit</button>
