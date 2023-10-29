@@ -13,7 +13,6 @@ export const SingleChat = ({username}) => {
     const [ws, setWs] = useState(null);
     const isWebSocketConnected = useRef(false)
   
-  
     useEffect(() => {
       getSingleChat(chatid).then((singleChatData) => {
         setChatData(singleChatData)
@@ -27,7 +26,6 @@ export const SingleChat = ({username}) => {
           console.log('WebSocket connected');
           setWs(newWs)
         };
-  
         newWs.onmessage = (event) => {
           const parsedEventData = JSON.parse(event.data);
           if(parsedEventData.type === 'user_message') {
@@ -41,7 +39,6 @@ export const SingleChat = ({username}) => {
             })
           }
         };
-  
         newWs.onclose = () => {
           console.log('WebSocket disconnected')
         };
@@ -50,24 +47,20 @@ export const SingleChat = ({username}) => {
   
     const handleSendMessage = (e) => {
       e.preventDefault()
-       
       if(message.trim() !== '') {
         const timeNow = Date.now();
         const objectId = generateMongoObjectId();
         const timeOfSending = { $timestamp: { t: timeNow, i: 0 }};
         postMessage(chatid, objectId, username, message, timeOfSending)
-        .then((data) => {
-
+        .then(() => {
+          setMessageList((prevMessageList) => [...prevMessageList, { _id: objectId, type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}]);
+          ws.send(JSON.stringify({ _id: objectId, type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}));
+          setMessage('');
         })
-        setMessageList((prevMessageList) => [...prevMessageList, { _id: objectId, type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}]);
-        ws.send(JSON.stringify({ _id: objectId, type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}));
-  
-        setMessage('');
       }
     };
-    const handleEditMessage = (messageId, messageContent) => {
-      patchMessage(chatid, messageId, messageContent).then((data) => {
-
+    const handleEditMessage = (messageId, newMessageContent) => {
+      patchMessage(chatid, messageId, newMessageContent).then((data) => {
       })
     }
     const handleDeleteMessage = (_id) => {
@@ -79,19 +72,19 @@ export const SingleChat = ({username}) => {
             ws.send(JSON.stringify({ type: 'delete_message', _id: _id}))
           })
       })
-  }
+    }
     if(isLoading) return <p>Loading... </p>
-    return (
-      <div>
-        <div id="chat-container">
-            <h2>{chatData.chatName}</h2>
-            <h3>Created by {chatData.chatCreator}</h3>
-            <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage}/>
-            <form id="message-form">
-                <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
-                <button id="submit-message" onClick={handleSendMessage}>Submit</button>
-            </form>
-        </div> 
-      </div>
-    )
+      return (
+        <div>
+          <div id="chat-container">
+              <h2>{chatData.chatName}</h2>
+              <h3>Created by {chatData.chatCreator}</h3>
+              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage}/>
+              <form id="message-form">
+                  <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
+                  <button id="submit-message" onClick={handleSendMessage}>Submit</button>
+              </form>
+          </div> 
+        </div>
+      )
 }
