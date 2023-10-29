@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import { deleteMessage, getSingleChat } from "../utils/api"
 
-export const MessageCard = ({_id, chatid, senderName, messageContent, timeOfSending, setMessageList, username, handleDeleteMessage, handleEditMessage}) => {
+export const MessageCard = ({_id, chatid, senderName, messageContent, timeOfSending, setMessageList, username, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit}) => {
 
     const [editMessage, setEditMessage] = useState(false);
     const [messageToUpdate, setMessageToUpdate] = useState(messageContent)
     const handleSubmitEdit = (e) => {
         e.preventDefault();
+        setEditInProgress(true)
+        setIdOfMessageToEdit(_id)
         handleEditMessage(_id, messageToUpdate);
         setEditMessage(false)
-        getSingleChat(chatid).then((updatedChatData) => {
-            setMessageList(updatedChatData.messages)
-        })
     }
+  
+    if(editInProgress && idOfMessageToEdit === _id) return <p>Edit in progress...</p>
     return (
        <div className="message-card">
             <p>{senderName}: {messageContent}</p>
