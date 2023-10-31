@@ -11,6 +11,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, set
         setIdOfMessageToEdit(_id)
         handleEditMessage(_id, messageToUpdate);
         setEditMessage(false)
+        setMessageToUpdate(messageContent)
     }
   
     if(editInProgress && idOfMessageToEdit === _id) return <p>Edit in progress...</p>
