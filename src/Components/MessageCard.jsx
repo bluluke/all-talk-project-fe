@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { deleteMessage, getSingleChat } from "../utils/api"
 
-export const MessageCard = ({_id, senderName, messageContent, timeOfSending, setMessageList, username, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete}) => {
+
+export const MessageCard = ({_id, senderName, messageContent, timeOfSending, username, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete}) => {
 
     const [editMessage, setEditMessage] = useState(false);
     const [messageToUpdate, setMessageToUpdate] = useState(messageContent)
