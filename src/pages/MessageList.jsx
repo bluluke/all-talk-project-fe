@@ -1,6 +1,6 @@
 import { MessageCard } from "../Components/MessageCard";
 
-export const MessageList = ({chatid, messageList, setMessageList, username, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete}) => {
+export const MessageList = ({ messageList, setMessageList, username, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete}) => {
    let idCount = 1;
     return (
         <section>
