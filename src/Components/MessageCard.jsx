@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { deleteMessage, getSingleChat } from "../utils/api"
 
-export const MessageCard = ({_id, senderName, messageContent, timeOfSending, setMessageList, username, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit}) => {
+export const MessageCard = ({_id, senderName, messageContent, timeOfSending, setMessageList, username, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete}) => {
 
     const [editMessage, setEditMessage] = useState(false);
     const [messageToUpdate, setMessageToUpdate] = useState(messageContent)
+
     const handleSubmitEdit = (e) => {
         e.preventDefault();
         setEditInProgress(true)
@@ -13,7 +14,14 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, set
         setEditMessage(false)
         setMessageToUpdate(messageContent)
     }
-  
+
+    const handleDeleteMessagePress = (e) => {
+        e.preventDefault();
+        setDeleteInProgress(true)
+        setIdOfMessageToDelete(_id)
+        handleDeleteMessage(_id)
+    }
+    if(deleteInProgress && idOfMessageToDelete === _id) return <p>Delete in progress...</p>
     if(editInProgress && idOfMessageToEdit === _id) return <p>Edit in progress...</p>
     return (
        <div className="message-card">
@@ -21,7 +29,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, set
             <p>{timeOfSending}</p>
             {username === senderName && (
             <div>
-                <button onClick={() => handleDeleteMessage(_id)}>Delete</button>
+                <button onClick={handleDeleteMessagePress}>Delete</button>
                 <button onClick={() => setEditMessage(true)}>Edit</button>
                 {editMessage === true && (
                     <div>

@@ -14,6 +14,8 @@ export const SingleChat = ({username}) => {
     const [message, setMessage] = useState('');
     const [messageList, setMessageList] = useState([]);
     const [idOfMessageToEdit, setIdOfMessageToEdit] = useState('');
+    const [deleteInProgress, setDeleteInProgress] = useState(false);
+    const [idOfMessageToDelete, setIdOfMessageToDelete] = useState('')
     const [ws, setWs] = useState(null);
     const isWebSocketConnected = useRef(false)
   
@@ -96,6 +98,8 @@ export const SingleChat = ({username}) => {
       deleteMessage(chatid, _id).then(() => {
           getSingleChat(chatid).then((singleChatData) => {
               setMessageList(singleChatData.messages)
+              setDeleteInProgress(false)
+              setIdOfMessageToDelete(false);
           })
           .then(() => {
             ws.send(JSON.stringify({ type: 'delete_message', _id: _id}))
@@ -111,7 +115,7 @@ export const SingleChat = ({username}) => {
           <div id="chat-container">
               <h2>{chatData.chatName}</h2>
               <h3>Created by {chatData.chatCreator}</h3>
-              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit}/>
+              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete}/>
               <form id="message-form">
                   <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                   <button id="submit-message" onClick={handleSendMessage}>Submit</button>
