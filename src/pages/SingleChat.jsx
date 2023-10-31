@@ -1,5 +1,7 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect, useRef} from 'react';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { getSingleChat, postMessage, patchMessage } from "../utils/api";
 import { MessageList } from "./MessageList";
 import { generateMongoObjectId, deleteMessage } from "../utils/api";
@@ -61,14 +63,26 @@ export const SingleChat = ({username}) => {
         })
       }
     };
+
+    const handleEditError = () => {   
+      toast("There was a problem. Message was not edited.", {
+          position: "top-center",
+          bodyClassName: 'toastBody',
+      });
+  };
     const handleEditMessage = (messageId, newMessageContent) => {
       patchMessage(chatid, messageId, newMessageContent)
-      .then(() => {
+      .then((data) => {
         getSingleChat(chatid).then((updatedChatData) => {
           setMessageList(updatedChatData.messages)
           setEditInProgress(false)  
           setIdOfMessageToEdit('')
         })
+      })
+      .catch((error) => {
+        handleEditError()   
+        setEditInProgress(false);
+        setIdOfMessageToEdit(null)
       })
     }
     const handleDeleteMessage = (_id) => {
