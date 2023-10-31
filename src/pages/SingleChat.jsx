@@ -85,6 +85,13 @@ export const SingleChat = ({username}) => {
         setIdOfMessageToEdit(null)
       })
     }
+
+    const handleDeleteError = () => {
+      toast("There was a problem. Message was not deleted.", {
+        position: "top-center",
+        bodyClassName: "toastBody"
+      })
+    }
     const handleDeleteMessage = (_id) => {
       deleteMessage(chatid, _id).then(() => {
           getSingleChat(chatid).then((singleChatData) => {
@@ -93,6 +100,9 @@ export const SingleChat = ({username}) => {
           .then(() => {
             ws.send(JSON.stringify({ type: 'delete_message', _id: _id}))
           })
+      })
+      .catch((error) => {
+        handleDeleteError();
       })
     }
     if(isLoading) return <p>Loading... </p>
