@@ -1,5 +1,5 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
-import React, { useEffect, useState, useRef, useContext } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
 import { UserContext } from './contexts/User';
 import './App.css'
 import { Header } from './Components/Header'
