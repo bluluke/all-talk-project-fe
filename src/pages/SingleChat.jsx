@@ -1,5 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useState, useEffect, useRef} from 'react';
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getSingleChat, postMessage, patchMessage } from "../utils/api";
@@ -114,6 +115,9 @@ export const SingleChat = ({username}) => {
         <div>
           <div id="chat-container">
               <h2>{chatData.chatName}</h2>
+              <Link to={'/'} className='home-link'>
+                <nav>Home</nav>
+              </Link>
               <h3>Created by {chatData.chatCreator}</h3>
               <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete}/>
               <form id="message-form">
