@@ -6,6 +6,8 @@ export const Home = ({username}) => {
     const [chatsNames, setChatsNames] = useState();
     const [newChatName, setNewChatName] = useState('');
     const [ isLoading, setIsLoading ] = useState(false);
+    const [idOfChatToDelete, setIdOfChatToDelete] = useState('');
+
     const nonWhiteSpaceCharactersRegex = /[^ ]/; 
     const onlyWhiteSpaceCharactersPresentRegex = /^\s+$/;
     const handleCreateChat = (e) => {
@@ -46,7 +48,7 @@ export const Home = ({username}) => {
                 }
 
             </form>
-            <ChatList username={username} setChatsNames={setChatsNames} chatsNames={chatsNames}/>
+            <ChatList username={username} setChatsNames={setChatsNames} chatsNames={chatsNames} idOfChatToDelete={idOfChatToDelete} setIdOfChatToDelete={setIdOfChatToDelete}/>
         </div>
     )
 }
