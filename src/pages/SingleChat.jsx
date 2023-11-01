@@ -1,8 +1,9 @@
 import {useParams} from "react-router-dom";
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect, useRef, useContext} from 'react';
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {UserContext} from '../contexts/User'
 import { getSingleChat, postMessage, patchMessage } from "../utils/api";
 import { MessageList } from "./MessageList";
 import { generateMongoObjectId, deleteMessage } from "../utils/api";
@@ -17,6 +18,7 @@ export const SingleChat = ({username}) => {
     const [idOfMessageToEdit, setIdOfMessageToEdit] = useState('');
     const [deleteInProgress, setDeleteInProgress] = useState(false);
     const [idOfMessageToDelete, setIdOfMessageToDelete] = useState('')
+    const user = useContext(UserContext)
     const [ws, setWs] = useState(null);
     const isWebSocketConnected = useRef(false)
   
@@ -58,10 +60,10 @@ export const SingleChat = ({username}) => {
         const timeNow = Date.now();
         const objectId = generateMongoObjectId();
         const timeOfSending = { $timestamp: { t: timeNow, i: 0 }};
-        postMessage(chatid, objectId, username, message, timeOfSending)
+        postMessage(chatid, objectId, user.user, message, timeOfSending)
         .then(() => {
-          setMessageList((prevMessageList) => [...prevMessageList, { _id: objectId, type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}]);
-          ws.send(JSON.stringify({ _id: objectId, type: 'user_message', messageContent: message, senderName: username, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}));
+          setMessageList((prevMessageList) => [...prevMessageList, { _id: objectId, type: 'user_message', messageContent: message, senderName: user.user, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}]);
+          ws.send(JSON.stringify({ _id: objectId, type: 'user_message', messageContent: message, senderName: user.user, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}));
           setMessage('');
         })
       }
