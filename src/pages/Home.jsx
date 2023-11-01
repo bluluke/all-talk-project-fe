@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { ChatList } from "../Components/ChatList"
 import { getChatsNames, postChat } from "../utils/api"
+import { UserContext } from '../contexts/User';
 
-export const Home = ({username}) => {
+export const Home = () => {
     const [chatsNames, setChatsNames] = useState();
     const [newChatName, setNewChatName] = useState('');
     const [ isLoading, setIsLoading ] = useState(false);
     const [idOfChatToDelete, setIdOfChatToDelete] = useState('');
+    const { user } = useContext(UserContext)
 
     const nonWhiteSpaceCharactersRegex = /[^ ]/; 
     const onlyWhiteSpaceCharactersPresentRegex = /^\s+$/;
@@ -15,7 +17,7 @@ export const Home = ({username}) => {
         if(!/[^ ]/.test(newChatName)) {
             console.log('Please enter a non-whitespace character.');
         } else {
-        postChat(newChatName, username).then(() => {
+        postChat(newChatName, user).then(() => {
             setIsLoading(true)
             setNewChatName('')
             getChatsNames().then((chatsNamesData) => {
@@ -48,7 +50,7 @@ export const Home = ({username}) => {
                 }
 
             </form>
-            <ChatList username={username} setChatsNames={setChatsNames} chatsNames={chatsNames} idOfChatToDelete={idOfChatToDelete} setIdOfChatToDelete={setIdOfChatToDelete}/>
+            <ChatList setChatsNames={setChatsNames} chatsNames={chatsNames} idOfChatToDelete={idOfChatToDelete} setIdOfChatToDelete={setIdOfChatToDelete}/>
         </div>
     )
 }

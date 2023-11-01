@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
+import { UserContext } from '../contexts/User'
 import { ChatCard } from './ChatCard';
 import { deleteChat, getChatsNames } from "../utils/api"
 
 
-export const ChatList = ({username, setChatsNames, chatsNames, idOfChatToDelete, setIdOfChatToDelete}) => {
+export const ChatList = ({ setChatsNames, chatsNames, idOfChatToDelete, setIdOfChatToDelete}) => {
 const [isLoading, setIsLoading] = useState(true)
+const user = useContext(UserContext)
 let idCount = 0;
 useEffect(() => {
 getChatsNames().then((data) => {
@@ -43,9 +45,9 @@ return (
                 if(idOfChatToDelete === _id) return <p>{chatName} chat is being deleted...</p>
                 return <div key={`${_id}${idCount}`}>
                     <Link to={`/chats/${_id}`} className='chat-link'>
-                        <ChatCard _id={_id} chatName={chatName} timeOfCreation={timeOfCreation} chatCreator={chatCreator} username={username} setChatsNames={setChatsNames}/>
+                        <ChatCard _id={_id} chatName={chatName} timeOfCreation={timeOfCreation} chatCreator={chatCreator} setChatsNames={setChatsNames}/>
                      </Link>
-                    {chatCreator === username && ( 
+                    {chatCreator === user.user && ( 
                         <button onClick={() => handleDeletechat(_id)}>Delete</button>
                     )} 
                 </div>

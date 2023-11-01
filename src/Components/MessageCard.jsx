@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { UserContext } from '../contexts/User'
 
-
-export const MessageCard = ({_id, senderName, messageContent, timeOfSending, username, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete}) => {
+export const MessageCard = ({_id, senderName, messageContent, timeOfSending, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete}) => {
 
     const [editMessage, setEditMessage] = useState(false);
     const [messageToUpdate, setMessageToUpdate] = useState(messageContent)
+    const user = useContext(UserContext)
 
     const handleSubmitEdit = (e) => {
         e.preventDefault();
@@ -27,7 +28,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, use
        <div className="message-card">
             <p>{senderName}: {messageContent}</p>
             <p>{timeOfSending}</p>
-            {username === senderName && (
+            {user.user === senderName && (
             <div>
                 <button onClick={handleDeleteMessagePress}>Delete</button>
                 <button onClick={() => setEditMessage(true)}>Edit</button>
