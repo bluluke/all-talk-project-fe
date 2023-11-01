@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
 import { ChatCard } from './ChatCard';
 import { deleteChat, getChatsNames } from "../utils/api"
 
@@ -12,6 +14,12 @@ getChatsNames().then((data) => {
     setIsLoading(false)
 })
 }, [])
+const handleDeleteChatError = () => {
+    toast("There was a problem. Chat was not deleted.", {
+        position: "top-center",
+        bodyClassName: "toastBody",
+    })
+}
 const handleDeletechat = (_id) => {
     deleteChat(_id).then(() => {
         setIdOfChatToDelete(_id)
@@ -19,6 +27,10 @@ const handleDeletechat = (_id) => {
            setChatsNames(chatNamesData)
            setIdOfChatToDelete('');
         })
+    })
+    .catch((error) => {
+        handleDeleteChatError()
+        setIdOfChatToDelete('')
     })
 }
 if(isLoading) return <p>Loading... </p>;
@@ -41,3 +53,4 @@ return (
 )
 }
   
+
