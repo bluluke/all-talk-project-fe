@@ -21,8 +21,8 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={<Home username={username}/>} />
-        <Route path="chats/:chatid" element={<SingleChat username={username}/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="chats/:chatid" element={<SingleChat />} />
       </Routes>
     </div>
   )

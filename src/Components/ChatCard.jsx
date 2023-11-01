@@ -1,4 +1,4 @@
-export const ChatCard = ({ _id, chatName, timeOfcreation, username, chatCreator, setChatsNames }) => {
+export const ChatCard = ({ _id, chatName, timeOfcreation, chatCreator, setChatsNames }) => {
     return (
         <li>
             <section className="chat-card">

@@ -3,7 +3,7 @@ import { ChatList } from "../Components/ChatList"
 import { getChatsNames, postChat } from "../utils/api"
 import { UserContext } from '../contexts/User';
 
-export const Home = ({username}) => {
+export const Home = () => {
     const [chatsNames, setChatsNames] = useState();
     const [newChatName, setNewChatName] = useState('');
     const [ isLoading, setIsLoading ] = useState(false);
@@ -50,7 +50,7 @@ export const Home = ({username}) => {
                 }
 
             </form>
-            <ChatList username={username} setChatsNames={setChatsNames} chatsNames={chatsNames} idOfChatToDelete={idOfChatToDelete} setIdOfChatToDelete={setIdOfChatToDelete}/>
+            <ChatList setChatsNames={setChatsNames} chatsNames={chatsNames} idOfChatToDelete={idOfChatToDelete} setIdOfChatToDelete={setIdOfChatToDelete}/>
         </div>
     )
 }

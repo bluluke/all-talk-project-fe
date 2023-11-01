@@ -7,7 +7,7 @@ import {UserContext} from '../contexts/User'
 import { getSingleChat, postMessage, patchMessage } from "../utils/api";
 import { MessageList } from "./MessageList";
 import { generateMongoObjectId, deleteMessage } from "../utils/api";
-export const SingleChat = ({username}) => {
+export const SingleChat = () => {
 
     const { chatid } = useParams(); 
     const [chatData, setChatData] = useState()
@@ -121,7 +121,7 @@ export const SingleChat = ({username}) => {
                 <nav>Home</nav>
               </Link>
               <h3>Created by {chatData.chatCreator}</h3>
-              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} username={username} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete}/>
+              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete}/>
               <form id="message-form">
                   <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                   <button id="submit-message" onClick={handleSendMessage}>Submit</button>
