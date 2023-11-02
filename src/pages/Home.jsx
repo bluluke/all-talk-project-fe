@@ -8,6 +8,7 @@ export const Home = () => {
     const [newChatName, setNewChatName] = useState('');
     const [ isLoading, setIsLoading ] = useState(false);
     const [idOfChatToDelete, setIdOfChatToDelete] = useState('');
+    const [chatBeingCreated, setChatBeingCreated] = useState(false)
     const { user } = useContext(UserContext)
 
     const nonWhiteSpaceCharactersRegex = /[^ ]/; 
@@ -18,11 +19,13 @@ export const Home = () => {
             console.log('Please enter a non-whitespace character.');
         } else {
         postChat(newChatName, user).then(() => {
-            setIsLoading(true)
+// loading was here
+            setChatBeingCreated(true)
             setNewChatName('')
             getChatsNames().then((chatsNamesData) => {
             setChatsNames(chatsNamesData);
-            setIsLoading(false)
+            setChatBeingCreated(false)
+// loading was here
             })
         })
     }
@@ -50,6 +53,7 @@ export const Home = () => {
                 }
 
             </form>
+            {chatBeingCreated && <p>New chat is being created...</p>}
             <ChatList setChatsNames={setChatsNames} chatsNames={chatsNames} idOfChatToDelete={idOfChatToDelete} setIdOfChatToDelete={setIdOfChatToDelete}/>
         </div>
     )
