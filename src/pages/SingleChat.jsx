@@ -54,6 +54,13 @@ export const SingleChat = () => {
      }
     }, [isWebSocketConnected, messageList]);
   
+
+    const handleSendMessageError = () => {
+      toast('There was a problem. Message was not sent.', {
+        position: 'top-center',
+        bodyClassName: 'toastBody'
+      });
+    };
     const handleSendMessage = (e) => {
       e.preventDefault()
       if(message.trim() !== '') {
@@ -65,6 +72,9 @@ export const SingleChat = () => {
           setMessageList((prevMessageList) => [...prevMessageList, { _id: objectId, type: 'user_message', messageContent: message, senderName: user.user, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}]);
           ws.send(JSON.stringify({ _id: objectId, type: 'user_message', messageContent: message, senderName: user.user, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}));
           setMessage('');
+        })
+        .catch((error) => {
+          handleSendMessageError()
         })
       }
     };
