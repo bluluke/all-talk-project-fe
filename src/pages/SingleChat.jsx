@@ -126,16 +126,18 @@ export const SingleChat = () => {
       return (
         <div>
           <div id="chat-container">
-              <h2>{chatData.chatName}</h2>
-              <Link to={'/'} className='home-link'>
-                <nav>Home</nav>
-              </Link>
-              <h3>Created by {chatData.chatCreator}</h3>
-              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete}/>
+              <nav id="single-chat-nav">
+                <h2 className="single-chat-name">{chatData.chatName}</h2>
+                <Link to={'/'} className='home-link'>
+                  <p id="home-nav">Home</p>
+                </Link>
+              </nav>
+              <h3 id="chat-creator">Created by {chatData.chatCreator}</h3>
               <form id="message-form">
                   <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
                   <button id="submit-message" onClick={handleSendMessage}>Submit</button>
               </form>
+              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete}/>
           </div> 
         </div>
       )

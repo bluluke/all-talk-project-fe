@@ -10,6 +10,7 @@ export const Home = () => {
     const [newChatName, setNewChatName] = useState('');
     const [idOfChatToDelete, setIdOfChatToDelete] = useState('');
     const [chatBeingCreated, setChatBeingCreated] = useState(false)
+    const [isLoading, setIsLoading] = useState(true);
     const { user } = useContext(UserContext)
 
     const nonWhiteSpaceCharactersRegex = /[^ ]/; 
@@ -36,28 +37,32 @@ export const Home = () => {
         })   
     }
     return (
-        <div>
-            <h2>Type the name of a new chat you want to create below</h2>
-            <form onSubmit={handleCreateChat}>
-                <input
-                    id="chatNameInput"
-                    name="chatName"
-                    placeholder='Type name of new chat'
-                    type="text"
-                    value={newChatName}
-                    onChange={((e) => setNewChatName(e.target.value))}
-                >    
-                </input>
-                 {nonWhiteSpaceCharactersRegex.test(newChatName)  &&
-                  <button id="createChatButton">Click to create a new chat</button> 
-                }
-                {onlyWhiteSpaceCharactersPresentRegex.test(newChatName) && 
-                <p>Please enter a non-whitespace character</p>
-                }
+        <div id="home-container">
+            {!isLoading &&
+                <section>
+                    <h2 id="type-name-for-new-chat-instruction">Type the name of a new chat you want to create below</h2>
+                    <form onSubmit={handleCreateChat}>
+                        <input
+                            id="chatNameInput"
+                            name="chatName"
+                            placeholder='Name of new chat'
+                            type="text"
+                            value={newChatName}
+                            onChange={((e) => setNewChatName(e.target.value))}
+                        >    
+                        </input>
+                        {nonWhiteSpaceCharactersRegex.test(newChatName)  &&
+                        <button id="create-chat-button">Click to create a new chat</button> 
+                        }
+                        {onlyWhiteSpaceCharactersPresentRegex.test(newChatName) && 
+                        <p id="enter-non-whistespace-prompt-new-chat">Please enter a non-whitespace character</p>
+                        }
 
-            </form>
+                    </form>
+                </section>
+            }
             {chatBeingCreated && <p>New chat is being created...</p>}
-            <ChatList setChatsNames={setChatsNames} chatsNames={chatsNames} idOfChatToDelete={idOfChatToDelete} setIdOfChatToDelete={setIdOfChatToDelete}/>
+            <ChatList setChatsNames={setChatsNames} chatsNames={chatsNames} idOfChatToDelete={idOfChatToDelete} setIdOfChatToDelete={setIdOfChatToDelete} setIsLoading={setIsLoading} isLoading={isLoading}/>
         </div>
     )
 }

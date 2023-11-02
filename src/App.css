@@ -1,0 +1,161 @@
+html {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.78);
+    color: rgb(21, 53, 110);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+body {
+    width: 100%;
+    max-width: 1220px;
+}
+
+ul {
+    list-style-type: none;
+}
+#home-container {
+
+}
+#header-container { 
+    font-size: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: rgb(21, 53, 110);
+}
+
+#chat-list-container {
+    margin-top:3rem;
+}
+
+.chat-card-container {
+    background-color: rgb(21, 53, 110);
+    margin-right: 2.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+.chat-card-heading {
+    color: white;
+    font-size: 2.5rem;
+}
+.chat-link {
+    text-align: center;
+}
+.delete-chat-button {
+    height: 2.5rem;
+    text-align: center;
+}
+/* .chat-card-container {
+    border: 3px solid green;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.chat-link {
+    flex: 1;
+    text-align: center;
+}
+.delete-chat-button {
+    height: 2.5rem;
+} */
+#click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
+    margin-left: 2.5rem;;
+}
+
+#chatNameInput {
+    height: 2rem;
+    width: 39rem;
+}
+
+input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
+    font-size: 1.5rem;
+}
+#enter-non-whistespace-prompt-new-chat {
+    color: red;
+}
+
+#create-chat-button {
+    width: 20rem;
+    height: 2.3rem;
+    margin-left: 1rem;
+}
+
+
+
+
+
+#single-chat-nav {
+   display: flex;
+   justify-content: space-between;
+   padding-left: 2rem;
+   padding-right: 2rem;
+   background-color: orange;;
+}
+.single-chat-name {
+    font-size: 2.5rem;
+    background-color: orange;
+    color: rgb(21, 53, 110);
+}
+.home-link {
+    font-size: 2rem;
+    background-color: orange;
+    color: rgb(21, 53, 110);
+}
+
+
+
+.this-user-message, .other-user-message {
+    font-size: 1.6rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    border: 0.4rem solid white;
+}
+
+.this-user-message {
+    display: flex;
+justify-content: flex-start;
+
+color:  rgb(21, 53, 110);
+padding-left: 1rem;
+}
+
+.this-user-message  .message-card {
+    background-color: orange;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    border-radius: 15px;
+}
+.other-user-message {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+}
+.other-user-message .message-card {
+    background-color: rgb(21, 53, 110);
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    border-radius: 15px;
+}
+
+#submit-message {
+    height: 2rem;
+    width: 10rem;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+#chat-creator {
+    font-size: 2rem;
+}
+#message-list {
+    margin-top: 1rem;
+    border: 0.5rem solid rgb(21, 53, 110);
+}
