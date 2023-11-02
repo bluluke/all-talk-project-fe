@@ -6,7 +6,6 @@ import { UserContext } from '../contexts/User';
 export const Home = () => {
     const [chatsNames, setChatsNames] = useState();
     const [newChatName, setNewChatName] = useState('');
-    const [ isLoading, setIsLoading ] = useState(false);
     const [idOfChatToDelete, setIdOfChatToDelete] = useState('');
     const [chatBeingCreated, setChatBeingCreated] = useState(false)
     const { user } = useContext(UserContext)
@@ -19,19 +18,16 @@ export const Home = () => {
             console.log('Please enter a non-whitespace character.');
         } else {
         postChat(newChatName, user).then(() => {
-// loading was here
             setChatBeingCreated(true)
             setNewChatName('')
             getChatsNames().then((chatsNamesData) => {
             setChatsNames(chatsNamesData);
             setChatBeingCreated(false)
-// loading was here
             })
         })
     }
         
     }
-    if (isLoading) return ( <p>Loading...</p> )
     return (
         <div>
             <h3>Choose a chat to join</h3>
