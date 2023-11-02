@@ -14,9 +14,6 @@ export const Home = () => {
     const onlyWhiteSpaceCharactersPresentRegex = /^\s+$/;
     const handleCreateChat = (e) => {
         e.preventDefault();
-        if(!/[^ ]/.test(newChatName)) {
-            console.log('Please enter a non-whitespace character.');
-        } else {
         postChat(newChatName, user).then(() => {
             setChatBeingCreated(true)
             setNewChatName('')
@@ -24,9 +21,7 @@ export const Home = () => {
             setChatsNames(chatsNamesData);
             setChatBeingCreated(false)
             })
-        })
-    }
-        
+        })      
     }
     return (
         <div>
