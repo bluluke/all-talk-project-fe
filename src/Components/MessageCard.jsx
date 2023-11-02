@@ -13,7 +13,6 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
         setIdOfMessageToEdit(_id)
         handleEditMessage(_id, messageToUpdate);
         setEditMessage(false)
-        setMessageToUpdate(messageContent)
     }
 
     const handleDeleteMessagePress = (e) => {
