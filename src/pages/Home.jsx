@@ -1,4 +1,6 @@
 import { useState, useContext } from 'react';
+import { toast } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 import { ChatList } from "../Components/ChatList"
 import { getChatsNames, postChat } from "../utils/api"
 import { UserContext } from '../contexts/User';
@@ -12,6 +14,13 @@ export const Home = () => {
 
     const nonWhiteSpaceCharactersRegex = /[^ ]/; 
     const onlyWhiteSpaceCharactersPresentRegex = /^\s+$/;
+
+    const handleCreatChatError = () => {
+        toast("There was a problem. Chat was not created.", {
+            position: "top-center",
+            bodyClassName: "toastBody"
+        });
+    };
     const handleCreateChat = (e) => {
         e.preventDefault();
         postChat(newChatName, user).then(() => {
@@ -21,7 +30,10 @@ export const Home = () => {
             setChatsNames(chatsNamesData);
             setChatBeingCreated(false)
             })
-        })      
+        })   
+        .catch((error) => {
+            handleCreatChatError()
+        })   
     }
     return (
         <div>
