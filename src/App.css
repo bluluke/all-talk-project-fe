@@ -89,3 +89,75 @@ input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
     height: 2.3rem;
     margin-left: 1rem;
 }
+
+
+
+
+
+#single-chat-nav {
+   display: flex;
+   justify-content: space-between;
+   padding-left: 2rem;
+   padding-right: 2rem;
+   background-color: orange;;
+}
+.single-chat-name {
+    font-size: 2.5rem;
+    background-color: orange;
+    color: rgb(21, 53, 110);
+}
+.home-link {
+    font-size: 2rem;
+    background-color: orange;
+    color: rgb(21, 53, 110);
+}
+
+
+
+.this-user-message, .other-user-message {
+    font-size: 1.6rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    border: 0.4rem solid white;
+}
+
+.this-user-message {
+    display: flex;
+justify-content: flex-start;
+
+color:  rgb(21, 53, 110);
+padding-left: 1rem;
+}
+
+.this-user-message  .message-card {
+    background-color: orange;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    border-radius: 15px;
+}
+.other-user-message {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+}
+.other-user-message .message-card {
+    background-color: rgb(21, 53, 110);
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    border-radius: 15px;
+}
+
+#submit-message {
+    height: 2rem;
+    width: 10rem;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+#chat-creator {
+    font-size: 2rem;
+}
+#message-list {
+    margin-top: 1rem;
+    border: 0.5rem solid rgb(21, 53, 110);
+}
