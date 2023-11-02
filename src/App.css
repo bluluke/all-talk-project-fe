@@ -1,0 +1,21 @@
+html {
+    background-color: rgb(173, 240, 240);
+    color: rgb(21, 53, 110);
+    border: 3px solid green;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+#home-container {
+    border: 3px solid red;
+}
+#header-container { 
+    border: 3px solid orange;
+}
+
+#chat-list-container {
+    border: 3px solid purple;
+}
+
+.chat-card {
+    border: 3px solid green;
+}

@@ -37,7 +37,7 @@ export const Home = () => {
         })   
     }
     return (
-        <div>
+        <div id="home-container">
             {!isLoading &&
                 <section>
                     <h2>Type the name of a new chat you want to create below</h2>
