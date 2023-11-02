@@ -10,7 +10,6 @@ import { deleteChat, getChatsNames } from "../utils/api"
 export const ChatList = ({ setChatsNames, chatsNames, idOfChatToDelete, setIdOfChatToDelete}) => {
 const [isLoading, setIsLoading] = useState(true)
 const user = useContext(UserContext)
-let idCount = 0;
 useEffect(() => {
 getChatsNames().then((data) => {
     setChatsNames(data)
@@ -41,10 +40,9 @@ return (
     <section id="chat-list-container">
         <ul id="chat-list">
            {chatsNames.map(({ _id, chatName, timeOfCreation, chatCreator}) => {
-            idCount++
                 if(idOfChatToDelete === _id) return <p key={_id}>{chatName} chat is being deleted...</p>
-                return <div key={`${_id}${idCount}`}>
-                    <Link to={`/chats/${_id}`} className='chat-link' key={`${_id}${idCount}`}>
+                return <div key={_id}>
+                    <Link to={`/chats/${_id}`} className='chat-link'>
                         <ChatCard _id={_id} chatName={chatName} timeOfCreation={timeOfCreation} chatCreator={chatCreator} setChatsNames={setChatsNames}/>
                      </Link>
                     {chatCreator === user.user && ( 
