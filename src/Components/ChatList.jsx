@@ -38,6 +38,7 @@ const handleDeletechat = (_id) => {
 if(isLoading) return <p>Loading... </p>;
 return (
     <section id="chat-list-container">
+        <h2>Click a chat below to join</h2>
         <ul id="chat-list">
            {chatsNames.map(({ _id, chatName, timeOfCreation, chatCreator}) => {
                 if(idOfChatToDelete === _id) return <p key={_id}>{chatName} chat is being deleted...</p>
