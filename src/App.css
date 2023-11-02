@@ -5,7 +5,6 @@ html {
     margin: 0;
     background-color: rgba(255, 255, 255, 0.78);
     color: rgb(21, 53, 110);
-    border: 3px solid green;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -18,31 +17,30 @@ ul {
     list-style-type: none;
 }
 #home-container {
-    border: 3px solid red;
+
 }
 #header-container { 
     font-size: 2.5rem;
     width: 100%;
     display: flex;
     justify-content: center;
-    border: 3px solid orange;
     color: white;
     background-color: rgb(21, 53, 110);
 }
 
 #chat-list-container {
-    border: 3px solid purple;
     margin-top:3rem;
 }
 
 .chat-card-container {
-    border: 3px solid green;
+    background-color: rgb(21, 53, 110);
     margin-right: 2.5rem;
     margin-bottom: 1rem;
     padding: 1rem;
     text-align: center;
 }
 .chat-card-heading {
+    color: white;
     font-size: 2.5rem;
 }
 .chat-link {
