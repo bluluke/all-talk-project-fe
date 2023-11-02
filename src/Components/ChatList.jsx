@@ -42,9 +42,9 @@ return (
         <ul id="chat-list">
            {chatsNames.map(({ _id, chatName, timeOfCreation, chatCreator}) => {
             idCount++
-                if(idOfChatToDelete === _id) return <p>{chatName} chat is being deleted...</p>
+                if(idOfChatToDelete === _id) return <p key={_id}>{chatName} chat is being deleted...</p>
                 return <div key={`${_id}${idCount}`}>
-                    <Link to={`/chats/${_id}`} className='chat-link'>
+                    <Link to={`/chats/${_id}`} className='chat-link' key={`${_id}${idCount}`}>
                         <ChatCard _id={_id} chatName={chatName} timeOfCreation={timeOfCreation} chatCreator={chatCreator} setChatsNames={setChatsNames}/>
                      </Link>
                     {chatCreator === user.user && ( 
