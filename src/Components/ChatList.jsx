@@ -37,16 +37,16 @@ const handleDeletechat = (_id) => {
 if(isLoading) return <p>Loading... </p>;
 return (
     <section id="chat-list-container">
-        <h2>Click a chat below to join</h2>
+        <h2 id="click-chat-instruction">Click a chat below to join</h2>
         <ul id="chat-list">
            {chatsNames.map(({ _id, chatName, timeOfCreation, chatCreator}) => {
                 if(idOfChatToDelete === _id) return <p key={_id}>{chatName} chat is being deleted...</p>
-                return <div key={_id}>
+                return <div key={_id} className="chat-card-container">
                     <Link to={`/chats/${_id}`} className='chat-link'>
                         <ChatCard _id={_id} chatName={chatName} timeOfCreation={timeOfCreation} chatCreator={chatCreator} setChatsNames={setChatsNames}/>
                      </Link>
                     {chatCreator === user.user && ( 
-                        <button onClick={() => handleDeletechat(_id)}>Delete</button>
+                        <button className="delete-chat-button" onClick={() => handleDeletechat(_id)}>Delete</button>
                     )} 
                 </div>
            })}

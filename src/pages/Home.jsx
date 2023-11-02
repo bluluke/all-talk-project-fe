@@ -40,22 +40,22 @@ export const Home = () => {
         <div id="home-container">
             {!isLoading &&
                 <section>
-                    <h2>Type the name of a new chat you want to create below</h2>
+                    <h2 id="type-name-for-new-chat-instruction">Type the name of a new chat you want to create below</h2>
                     <form onSubmit={handleCreateChat}>
                         <input
                             id="chatNameInput"
                             name="chatName"
-                            placeholder='Type name of new chat'
+                            placeholder='Name of new chat'
                             type="text"
                             value={newChatName}
                             onChange={((e) => setNewChatName(e.target.value))}
                         >    
                         </input>
                         {nonWhiteSpaceCharactersRegex.test(newChatName)  &&
-                        <button id="createChatButton">Click to create a new chat</button> 
+                        <button id="create-chat-button">Click to create a new chat</button> 
                         }
                         {onlyWhiteSpaceCharactersPresentRegex.test(newChatName) && 
-                        <p>Please enter a non-whitespace character</p>
+                        <p id="enter-non-whistespace-prompt-new-chat">Please enter a non-whitespace character</p>
                         }
 
                     </form>

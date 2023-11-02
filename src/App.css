@@ -1,21 +1,91 @@
 html {
-    background-color: rgb(173, 240, 240);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.78);
     color: rgb(21, 53, 110);
     border: 3px solid green;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+body {
+    width: 100%;
+    max-width: 1220px;
+}
+
+ul {
+    list-style-type: none;
+}
 #home-container {
     border: 3px solid red;
 }
 #header-container { 
+    font-size: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     border: 3px solid orange;
+    color: white;
+    background-color: rgb(21, 53, 110);
 }
 
 #chat-list-container {
     border: 3px solid purple;
+    margin-top:3rem;
 }
 
-.chat-card {
+.chat-card-container {
     border: 3px solid green;
+    margin-right: 2.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+.chat-card-heading {
+    font-size: 2.5rem;
+}
+.chat-link {
+    text-align: center;
+}
+.delete-chat-button {
+    height: 2.5rem;
+    text-align: center;
+}
+/* .chat-card-container {
+    border: 3px solid green;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.chat-link {
+    flex: 1;
+    text-align: center;
+}
+.delete-chat-button {
+    height: 2.5rem;
+} */
+#click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
+    margin-left: 2.5rem;;
+}
+
+#chatNameInput {
+    height: 2rem;
+    width: 39rem;
+}
+
+input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
+    font-size: 1.5rem;
+}
+#enter-non-whistespace-prompt-new-chat {
+    color: red;
+}
+
+#create-chat-button {
+    width: 20rem;
+    height: 2.3rem;
+    margin-left: 1rem;
 }
