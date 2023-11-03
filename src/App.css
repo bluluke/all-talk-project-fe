@@ -48,22 +48,7 @@ ul {
     height: 2.5rem;
     text-align: center;
 }
-/* .chat-card-container {
-    border: 3px solid green;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 2.5rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-}
-.chat-link {
-    flex: 1;
-    text-align: center;
-}
-.delete-chat-button {
-    height: 2.5rem;
-} */
+
 #click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
     margin-left: 2.5rem;;
 }
