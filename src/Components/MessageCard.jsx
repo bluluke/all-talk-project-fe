@@ -29,8 +29,8 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
             <p>{timeOfSending}</p>
             {user.user === senderName && (
             <div>
-                <button onClick={handleDeleteMessagePress}>Delete</button>
-                <button onClick={() => setEditMessage(true)}>Edit</button>
+                <button className="delete-message-button" onClick={handleDeleteMessagePress}>Delete</button>
+                <button className="edit-message-button" onClick={() => setEditMessage(true)}>Edit</button>
                 {editMessage === true && (
                     <div>
                      <br></br>   
