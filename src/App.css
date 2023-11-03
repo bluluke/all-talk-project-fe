@@ -1,7 +1,10 @@
 :root {
-    --first-color: rgb(4, 21, 50);
-    --second-color: rgb(240, 236, 230);
+    --first-color: rgb(10, 32, 70);
+    --second-color: rgb(255, 249, 243);
     --third-color: rgb(253, 198, 142); 
+    --red-color: rgb(200, 5, 5);
+    --greeen-color: rgb(3, 145, 3);
+    --blue-color: rgb(37, 87, 163);
 }
 #root {
     background-color: var(--second-color);
@@ -21,14 +24,16 @@ body {
     max-width: 1220px;
     background-color: var(--second-color);
 }
-
 ul {
     list-style-type: none;
 }
-
 a {
     text-decoration: none;
   }
+button {
+    border-radius: 10px;
+}
+
 #home-container {
     background-color: var(--second-color);
 }
@@ -65,12 +70,17 @@ a {
 .delete-chat-button {
     height: 2.5rem;
     text-align: center;
+    background-color: var(--red-color);
+    color: var(--second-color)
 }
 
 #click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
     margin-left: 2.5rem;;
 }
-
+#create-chat-button {
+    background-color: var(--greeen-color);
+    color: var(--second-color)
+}
 #chatNameInput {
     height: 2rem;
     width: 39rem;
@@ -80,7 +90,7 @@ input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
     font-size: 1.5rem;
 }
 .enter-non-whistespace-prompt-new-chat {
-    color: red;
+    color: var(--red-color);
 }
 
 #create-chat-button {
@@ -169,14 +179,22 @@ padding-left: 1rem;
 }
 .edit-message-button {
     margin-left: 0.5rem;
+    background-color: var(--blue-color);
+    color: var(--second-color)
 }
 
+.delete-message-button {
+    background-color: var(--red-color);
+    color: var(--second-color)
+}
 
 #submit-message {
     height: 2rem;
     width: 10rem;
     font-size: 1.5rem;
     margin-left: 0.5rem;
+    background-color: var(--greeen-color);
+    color: var(--second-color)
 }
 
 #chat-creator {
