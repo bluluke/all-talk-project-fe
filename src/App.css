@@ -1,10 +1,16 @@
+:root {
+    --first-color: rgb(31, 59, 108);
+    --second-color: white;
+    --third-color: rgb(247, 190, 84); 
+}
+
 html {
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 0;
-    background-color: rgba(255, 255, 255, 0.78);
-    color: rgb(21, 53, 110);
+    background-color: var(--second-color);
+    color: var(--first-color);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -27,7 +33,7 @@ a {
     display: flex;
     justify-content: center;
     color: white;
-    background-color: rgb(21, 53, 110);
+    background-color: var(--first-color);
 }
 #header-container > * {
     margin: 1rem;
@@ -38,7 +44,7 @@ a {
 }
 
 .chat-card-container {
-    background-color: rgb(21, 53, 110);
+    background-color: var(--first-color);
     margin-right: 2.5rem;
     margin-bottom: 1rem;
     padding: 1rem;
@@ -88,7 +94,7 @@ input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
    align-items: center;
    padding-left: 2rem;
    padding-right: 2rem;
-   background-color:orange;
+   background-color: var(--third-color);
 }
 #single-chat-nav > *{
 margin-top: -1rem;
@@ -97,7 +103,7 @@ padding: 0;
 }
 .single-chat-name {
     font-size: 2.5rem;
-    color: rgb(21, 53, 110);
+    color: var(--first-color);
 }
 .home-link {
     font-size: 2rem;
@@ -121,19 +127,19 @@ padding: 0;
     font-size: 1.6rem;
     padding-right: 3rem;
     padding-left: 3rem;
-    border: 0.4rem solid white;
+    border: 0.4rem solid var(--second-color);
 }
 
 .this-user-message {
     display: flex;
 justify-content: flex-start;
 
-color:  rgb(21, 53, 110);
+color: var(--first-color);
 padding-left: 1rem;
 }
 
 .this-user-message  .message-card {
-    background-color: orange;
+    background-color: var(--third-color);
     padding-right: 2.5rem;
     padding-left: 2.5rem;
     border-radius: 15px;
@@ -141,10 +147,10 @@ padding-left: 1rem;
 .other-user-message {
     display: flex;
     justify-content: flex-end;
-    color: white;
+    color: var(--second-color);
 }
 .other-user-message .message-card {
-    background-color: rgb(21, 53, 110);
+    background-color: var(--first-color);
     padding-right: 2.5rem;
     padding-left: 2.5rem;
     border-radius: 15px;
@@ -173,5 +179,5 @@ padding-left: 1rem;
 }
 #message-list {
     margin-top: 1rem;
-    border: 0.5rem solid rgb(21, 53, 110);
+    border: 0.5rem solid var(--first-color);
 }
