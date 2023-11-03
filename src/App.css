@@ -76,10 +76,10 @@ a {
     width: 39rem;
 }
 
-input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
+input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
     font-size: 1.5rem;
 }
-#enter-non-whistespace-prompt-new-chat {
+.enter-non-whistespace-prompt-new-chat {
     color: red;
 }
 
