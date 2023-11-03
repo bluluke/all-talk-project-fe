@@ -93,8 +93,19 @@ input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
     color: rgb(21, 53, 110);
 }
 
-
-
+.message-card {
+    padding: 0;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.message-card > * {
+    margin: 0.3rem; /* Adjust the margin value as needed */
+  }
+  .time-of-sending {
+    font-size: 1.2rem;
+  }
 .this-user-message, .other-user-message {
     font-size: 1.6rem;
     padding-right: 3rem;
@@ -132,7 +143,7 @@ padding-left: 1rem;
     height: 2rem;
     width: 6rem;
     font-size: 1.5rem;
-    margin-bottom: 1rem;;
+    margin-bottom: 0.5rem;;
 }
 .edit-message-button {
     margin-left: 0.5rem;

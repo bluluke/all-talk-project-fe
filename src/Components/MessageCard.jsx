@@ -26,7 +26,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
     return (
        <div className="message-card">
             <p>{senderName}: {messageContent}</p>
-            <p>{timeOfSending}</p>
+            <p class="time-of-sending">{timeOfSending}</p>
             {user.user === senderName && (
             <div>
                 <button className="delete-message-button" onClick={handleDeleteMessagePress}>Delete</button>
