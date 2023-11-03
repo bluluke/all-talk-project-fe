@@ -33,6 +33,10 @@ a {
 button {
     border-radius: 10px;
 }
+input {
+    color: var(--first-color);
+    border-radius: 8px;
+}
 
 #home-container {
     background-color: var(--second-color);
@@ -204,4 +208,5 @@ padding-left: 1rem;
 #message-list {
     margin-top: 1rem;
     border: 0.5rem solid var(--first-color);
+    border-radius: 20px;
 }
