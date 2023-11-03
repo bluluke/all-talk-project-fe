@@ -25,6 +25,9 @@ ul {
     color: white;
     background-color: rgb(21, 53, 110);
 }
+#header-container > * {
+    margin: 1rem;
+}
 
 #chat-list-container {
     margin-top:3rem;
@@ -78,18 +81,22 @@ input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
 #single-chat-nav {
    display: flex;
    justify-content: space-between;
+   align-items: center;
    padding-left: 2rem;
    padding-right: 2rem;
    background-color: orange;;
 }
+#single-chat-nav > *{
+margin-top: -1rem;
+margin-bottom: -1rem;
+padding: 0;
+}
 .single-chat-name {
     font-size: 2.5rem;
-    background-color: orange;
     color: rgb(21, 53, 110);
 }
 .home-link {
     font-size: 2rem;
-    background-color: orange;
     color: rgb(21, 53, 110);
 }
 
