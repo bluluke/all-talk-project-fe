@@ -17,6 +17,10 @@ ul {
     list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+  }
+
 #header-container { 
     font-size: 2.5rem;
     width: 100%;
@@ -84,7 +88,7 @@ input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
    align-items: center;
    padding-left: 2rem;
    padding-right: 2rem;
-   background-color: orange;;
+   background-color:orange;
 }
 #single-chat-nav > *{
 margin-top: -1rem;
