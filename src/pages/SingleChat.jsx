@@ -22,6 +22,10 @@ export const SingleChat = () => {
     const [ws, setWs] = useState(null);
     const isWebSocketConnected = useRef(false)
   
+
+    const nonWhiteSpaceCharactersRegex = /[^ ]/; 
+    const onlyWhiteSpaceCharactersPresentRegex = /^\s+$/;
+
     useEffect(() => {
       getSingleChat(chatid).then((singleChatData) => {
         setChatData(singleChatData)
@@ -135,7 +139,12 @@ export const SingleChat = () => {
               <h3 id="chat-creator">Created by {chatData.chatCreator}</h3>
               <form id="message-form">
                   <input id="message-box" placeholder="write message here" value={message} onChange={(e) => setMessage(e.target.value)}></input>
-                  <button id="submit-message" onClick={handleSendMessage}>Submit</button>
+                  {nonWhiteSpaceCharactersRegex.test(message) && 
+                    <button id="submit-message" onClick={handleSendMessage}>Submit</button>
+                  }
+                  {onlyWhiteSpaceCharactersPresentRegex.test(message) && 
+                        <p className="enter-non-whistespace-prompt-new-chat">Please enter a non-whitespace character</p>
+                  }
               </form>
               <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete}/>
           </div> 

@@ -1,31 +1,56 @@
+:root {
+    --first-color: rgb(10, 32, 70);
+    --second-color: rgb(255, 249, 243);
+    --third-color: rgb(253, 198, 142); 
+    --red-color: rgb(200, 5, 5);
+    --greeen-color: rgb(3, 145, 3);
+    --blue-color: rgb(37, 87, 163);
+}
+#root {
+    background-color: var(--second-color);
+}
 html {
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 0;
-    background-color: rgba(255, 255, 255, 0.78);
-    color: rgb(21, 53, 110);
+    background-color: var(--second-color);
+    color: var(--first-color);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 body {
     width: 100%;
     max-width: 1220px;
+    background-color: var(--second-color);
 }
-
 ul {
     list-style-type: none;
 }
-#home-container {
+a {
+    text-decoration: none;
+  }
+button {
+    border-radius: 10px;
+}
+input {
+    color: var(--first-color);
+    border-radius: 8px;
+}
 
+#home-container {
+    background-color: var(--second-color);
 }
 #header-container { 
     font-size: 2.5rem;
     width: 100%;
     display: flex;
     justify-content: center;
-    color: white;
-    background-color: rgb(21, 53, 110);
+    color: var(--second-color);
+    background-color: var(--first-color);
+}
+#header-container > * {
+    margin: 1rem;
 }
 
 #chat-list-container {
@@ -33,14 +58,15 @@ ul {
 }
 
 .chat-card-container {
-    background-color: rgb(21, 53, 110);
+    background-color: var(--first-color);
     margin-right: 2.5rem;
     margin-bottom: 1rem;
     padding: 1rem;
     text-align: center;
+    border-radius: 80px;
 }
 .chat-card-heading {
-    color: white;
+    color: var(--second-color);
     font-size: 2.5rem;
 }
 .chat-link {
@@ -49,37 +75,27 @@ ul {
 .delete-chat-button {
     height: 2.5rem;
     text-align: center;
+    background-color: var(--red-color);
+    color: var(--second-color)
 }
-/* .chat-card-container {
-    border: 3px solid green;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 2.5rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-}
-.chat-link {
-    flex: 1;
-    text-align: center;
-}
-.delete-chat-button {
-    height: 2.5rem;
-} */
+
 #click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
     margin-left: 2.5rem;;
 }
-
+#create-chat-button {
+    background-color: var(--greeen-color);
+    color: var(--second-color)
+}
 #chatNameInput {
     height: 2rem;
-    width: 39rem;
+    width: 25rem;
 }
 
-input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
+input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
     font-size: 1.5rem;
 }
-#enter-non-whistespace-prompt-new-chat {
-    color: red;
+.enter-non-whistespace-prompt-new-chat {
+    color: var(--red-color);
 }
 
 #create-chat-button {
@@ -95,40 +111,55 @@ input, #enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
 #single-chat-nav {
    display: flex;
    justify-content: space-between;
+   align-items: center;
    padding-left: 2rem;
    padding-right: 2rem;
-   background-color: orange;;
+   background-color: var(--third-color);
+}
+#single-chat-nav > *{
+margin-top: -1rem;
+margin-bottom: -1rem;
+padding: 0;
 }
 .single-chat-name {
     font-size: 2.5rem;
-    background-color: orange;
-    color: rgb(21, 53, 110);
+    color: var(--first-color);
 }
 .home-link {
     font-size: 2rem;
-    background-color: orange;
-    color: rgb(21, 53, 110);
+    color: var(--first-color);
 }
 
-
-
+.message-card {
+    padding: 0;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.message-card > * {
+    margin: 0.3rem; /* Adjust the margin value as needed */
+  }
+  .time-of-sending {
+    font-size: 1.2rem;
+  }
 .this-user-message, .other-user-message {
     font-size: 1.6rem;
     padding-right: 3rem;
     padding-left: 3rem;
-    border: 0.4rem solid white;
+    border: 0.4rem solid var(--second-color);
 }
 
 .this-user-message {
     display: flex;
 justify-content: flex-start;
 
-color:  rgb(21, 53, 110);
+color: var(--first-color);
 padding-left: 1rem;
 }
 
 .this-user-message  .message-card {
-    background-color: orange;
+    background-color: var(--third-color);
     padding-right: 2.5rem;
     padding-left: 2.5rem;
     border-radius: 15px;
@@ -136,13 +167,30 @@ padding-left: 1rem;
 .other-user-message {
     display: flex;
     justify-content: flex-end;
-    color: white;
+    color: var(--second-color);
 }
 .other-user-message .message-card {
-    background-color: rgb(21, 53, 110);
+    background-color: var(--first-color);
     padding-right: 2.5rem;
     padding-left: 2.5rem;
     border-radius: 15px;
+}
+
+.delete-message-button, .edit-message-button {
+    height: 2rem;
+    width: 6rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;;
+}
+.edit-message-button {
+    margin-left: 0.5rem;
+    background-color: var(--blue-color);
+    color: var(--second-color)
+}
+
+.delete-message-button {
+    background-color: var(--red-color);
+    color: var(--second-color)
 }
 
 #submit-message {
@@ -150,6 +198,8 @@ padding-left: 1rem;
     width: 10rem;
     font-size: 1.5rem;
     margin-left: 0.5rem;
+    background-color: var(--greeen-color);
+    color: var(--second-color)
 }
 
 #chat-creator {
@@ -157,5 +207,8 @@ padding-left: 1rem;
 }
 #message-list {
     margin-top: 1rem;
-    border: 0.5rem solid rgb(21, 53, 110);
+    border: 0.5rem solid var(--first-color);
+    border-radius: 20px;
+    max-height: 25rem;
+    overflow-y: scroll;
 }
