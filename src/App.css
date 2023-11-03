@@ -88,7 +88,7 @@ input {
 }
 #chatNameInput {
     height: 2rem;
-    width: 39rem;
+    width: 25rem;
 }
 
 input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
