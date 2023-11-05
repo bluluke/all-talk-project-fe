@@ -22,12 +22,12 @@ html {
     color: var(--first-color);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
-
 body {
     width: 100%;
     max-width: 1220px;
     background-color: var(--second-color);
 }
+
 ul {
     list-style-type: none;
 }
@@ -163,7 +163,6 @@ padding: 0;
     padding-left: 3rem;
     border: 0.4rem solid var(--second-color);
 }
-
 .this-user-message {
     display: flex;
 justify-content: flex-start;
@@ -171,7 +170,6 @@ justify-content: flex-start;
 color: var(--first-color);
 padding-left: 1rem;
 }
-
 .this-user-message  .message-card {
     background-color: var(--third-color);
     padding-right: 2.5rem;
@@ -209,7 +207,9 @@ padding-left: 1rem;
 .delete-message-button:hover {
     background-color: var(--red-hover-color);
 }
-
+.delete-message-button:active {
+    background-color: var(--red-active-color);
+}
 #submit-message {
     height: 2rem;
     width: 10rem;
