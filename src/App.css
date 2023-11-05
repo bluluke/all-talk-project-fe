@@ -211,6 +211,9 @@ padding-left: 1rem;
     background-color: var(--blue-color);
     color: var(--second-color)
 }
+.submit-edited-message-button:hover {
+    background-color: var(--blue-hover-color);
+}
 .delete-message-button {
     background-color: var(--red-color);
     color: var(--second-color)
