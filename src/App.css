@@ -154,7 +154,9 @@ padding: 0;
 .home-link:hover {
     color: var(--blue-color);
 }
-
+.home-link:active {
+    color: var(--blue-active-color)
+}
 .message-card {
     padding: 0;
     border: 2px solid black;
