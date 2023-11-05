@@ -88,7 +88,6 @@ input {
 .delete-chat-button:active {
     background-color: var(--red-active-color);
 }
- 
 #click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
     margin-left: 2.5rem;;
 }
@@ -206,6 +205,9 @@ padding-left: 1rem;
 .delete-message-button {
     background-color: var(--red-color);
     color: var(--second-color)
+}
+.delete-message-button:hover {
+    background-color: var(--red-hover-color);
 }
 
 #submit-message {
