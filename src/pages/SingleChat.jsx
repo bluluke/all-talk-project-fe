@@ -43,6 +43,9 @@ export const SingleChat = () => {
           const parsedEventData = JSON.parse(event.data);
           if(parsedEventData.type === 'user_message') {
             setMessageList((prevMessageList) => [...prevMessageList, parsedEventData])
+            setMessageSent((previousValue) => {
+              return !previousValue;
+            });
           } if(parsedEventData.type === 'delete_message') {
             setMessageList((previousMessageList) => {
               const updatedMessageList = previousMessageList.filter((message) => {
