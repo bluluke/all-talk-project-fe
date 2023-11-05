@@ -3,7 +3,8 @@
     --second-color: rgb(255, 249, 243);
     --third-color: rgb(253, 198, 142); 
     --red-color: rgb(200, 5, 5);
-    --greeen-color: rgb(3, 145, 3);
+    --greeen-color: rgb(1, 148, 1);
+    --green-hover-color: rgb(1, 119, 1);
     --blue-color: rgb(37, 87, 163);
 }
 #root {
@@ -86,11 +87,14 @@ input {
     background-color: var(--greeen-color);
     color: var(--second-color)
 }
+
 #chatNameInput {
     height: 2rem;
     width: 25rem;
 }
-
+#create-chat-button:hover {
+    background-color: var(--green-hover-color);
+}
 input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
     font-size: 1.5rem;
 }
