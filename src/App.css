@@ -208,7 +208,7 @@ padding-left: 1rem;
 #message-list {
     margin-top: 1rem;
     border: 0.5rem solid var(--first-color);
-    border-radius: 20px;
+    border-radius: 10px;
     max-height: 25rem;
     overflow: scroll;
 }
