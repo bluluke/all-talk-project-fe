@@ -211,7 +211,9 @@ padding-left: 1rem;
 #submit-message:hover {
     background-color: var(--green-hover-color);
 }
-
+#submit-message:active {
+    background-color: var(--green-active-color);
+}
 #chat-creator {
     font-size: 2rem;
 }
