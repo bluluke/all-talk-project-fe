@@ -40,7 +40,7 @@ export const Home = () => {
         <div id="home-container">
             {!isLoading &&
                 <section>
-                    <h2 id="type-name-for-new-chat-instruction">Type the name of a new chat you want to create below</h2>
+                    <h2 id="type-name-for-new-chat-instruction">Type the name of a new chat you want to create</h2>
                     <form onSubmit={handleCreateChat}>
                         <input
                             id="chatNameInput"
