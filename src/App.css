@@ -8,7 +8,8 @@
     --greeen-color: rgb(1, 148, 1);
     --green-hover-color: rgb(1, 119, 1);
     --green-active-color: rgb(0, 66, 0);
-    --blue-color: rgb(37, 87, 163);
+    --blue-color: rgb(40, 95, 178);
+    --blue-hover-color: rgb(27, 64, 118);
 }
 #root {
     background-color: var(--second-color);
@@ -199,7 +200,9 @@ padding-left: 1rem;
     background-color: var(--blue-color);
     color: var(--second-color)
 }
-
+.edit-message-button:hover {
+    background-color: var(--blue-hover-color);
+}
 .delete-message-button {
     background-color: var(--red-color);
     color: var(--second-color)
