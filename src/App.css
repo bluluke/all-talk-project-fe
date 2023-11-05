@@ -151,6 +151,9 @@ padding: 0;
     font-size: 2rem;
     color: var(--first-color);
 }
+.home-link:hover {
+    color: var(--blue-color);
+}
 
 .message-card {
     padding: 0;
