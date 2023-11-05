@@ -36,7 +36,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
                      <br></br>   
                      <form onSubmit={handleSubmitEdit}>
                      <input value={messageToUpdate} onChange={(e) => setMessageToUpdate(e.target.value)} ></input>
-                     <button>Submit edited message</button>
+                     <button className="submit-edited-message-button">Submit edited message</button>
                      </form>
                     </div>
                 )}
