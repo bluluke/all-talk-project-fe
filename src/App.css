@@ -10,7 +10,7 @@
     --green-active-color: rgb(0, 66, 0);
     --blue-color: rgb(40, 95, 178);
     --blue-hover-color: rgb(27, 64, 118);
-    --blue-active-color:  rgb(14, 35, 67);
+    --blue-active-color:  rgb(9, 25, 50);
 }
 #root {
     background-color: var(--second-color);
@@ -73,6 +73,9 @@ input {
 }
 .chat-card-container:hover {
     background-color: var(--blue-color);
+}
+.chat-card-container:active {
+    background-color: var(--blue-active-color);
 }
 .chat-card-heading {
     color: var(--second-color);
