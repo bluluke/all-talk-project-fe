@@ -1,9 +1,7 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../contexts/User'
 
-export const MessageCard = ({_id, senderName, messageContent, timeOfSending, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete}) => {
-
-    const [editMessage, setEditMessage] = useState(false);
+export const MessageCard = ({_id, senderName, messageContent, timeOfSending, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete, editMessage, setEditMessage}) => {
     const [messageToUpdate, setMessageToUpdate] = useState(messageContent)
     const user = useContext(UserContext)
 
@@ -14,7 +12,6 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
         handleEditMessage(_id, messageToUpdate);
         setEditMessage(false)
     }
-
     const handleDeleteMessagePress = (e) => {
         e.preventDefault();
         setDeleteInProgress(true)
@@ -30,7 +27,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
             {user.user === senderName && (
             <div>
                 <button className="delete-message-button" onClick={handleDeleteMessagePress}>Delete</button>
-                <button className="edit-message-button" onClick={() => setEditMessage(true)}>Edit</button>
+                <button className="edit-message-button" onClick={() => setEditMessage(true)}>Edit</button>  
                 {editMessage === true && (
                     <div>
                      <br></br>   
