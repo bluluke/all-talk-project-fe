@@ -71,6 +71,9 @@ input {
     text-align: center;
     border-radius: 80px;
 }
+.chat-card-container:hover {
+    background-color: var(--blue-color);
+}
 .chat-card-heading {
     color: var(--second-color);
     font-size: 2.5rem;
