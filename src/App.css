@@ -3,6 +3,7 @@
     --second-color: rgb(255, 249, 243);
     --third-color: rgb(253, 198, 142); 
     --red-color: rgb(200, 5, 5);
+    --red-hover-color: rgb(162, 1, 1);
     --greeen-color: rgb(1, 148, 1);
     --green-hover-color: rgb(1, 119, 1);
     --green-active-color: rgb(0, 66, 0);
@@ -79,6 +80,9 @@ input {
     text-align: center;
     background-color: var(--red-color);
     color: var(--second-color)
+}
+.delete-chat-button:hover {
+    background-color: var(--red-hover-color);
 }
 
 #click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
