@@ -7,8 +7,8 @@ import {UserContext} from '../contexts/User'
 import { getSingleChat, postMessage, patchMessage } from "../utils/api";
 import { MessageList } from "./MessageList";
 import { generateMongoObjectId, deleteMessage } from "../utils/api";
-export const SingleChat = () => {
 
+export const SingleChat = () => {
     const { chatid } = useParams(); 
     const [chatData, setChatData] = useState()
     const [isLoading, setIsLoading ] = useState(true)
@@ -18,11 +18,11 @@ export const SingleChat = () => {
     const [idOfMessageToEdit, setIdOfMessageToEdit] = useState('');
     const [deleteInProgress, setDeleteInProgress] = useState(false);
     const [idOfMessageToDelete, setIdOfMessageToDelete] = useState('')
+    const [messageSent, setMessageSent] = useState(false);
     const user = useContext(UserContext)
     const [ws, setWs] = useState(null);
     const isWebSocketConnected = useRef(false)
   
-
     const nonWhiteSpaceCharactersRegex = /[^ ]/; 
     const onlyWhiteSpaceCharactersPresentRegex = /^\s+$/;
 
@@ -66,21 +66,26 @@ export const SingleChat = () => {
       });
     };
     const handleSendMessage = (e) => {
-      e.preventDefault()
-      if(message.trim() !== '') {
-        const timeNow = Date.now();
-        const objectId = generateMongoObjectId();
-        const timeOfSending = { $timestamp: { t: timeNow, i: 0 }};
-        postMessage(chatid, objectId, user.user, message, timeOfSending)
-        .then(() => {
-          setMessageList((prevMessageList) => [...prevMessageList, { _id: objectId, type: 'user_message', messageContent: message, senderName: user.user, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}]);
-          ws.send(JSON.stringify({ _id: objectId, type: 'user_message', messageContent: message, senderName: user.user, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}));
-          setMessage('');
-        })
-        .catch((error) => {
-          handleSendMessageError()
-        })
-      }
+        e.preventDefault()
+        if(message.trim() !== '') {
+          const timeNow = Date.now();
+          const objectId = generateMongoObjectId();
+          const timeOfSending = { $timestamp: { t: timeNow, i: 0 }};
+          postMessage(chatid, objectId, user.user, message, timeOfSending)
+          .then(() => {
+            setMessageList((prevMessageList) => [...prevMessageList, { _id: objectId, type: 'user_message', messageContent: message, senderName: user.user, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}]);
+            ws.send(JSON.stringify({ _id: objectId, type: 'user_message', messageContent: message, senderName: user.user, timeOfSending: { $timestamp: { t: timeNow, i: 0 }}}));
+            setMessage('');
+          })
+          .then(() => {
+            setMessageSent((previousValue) => {
+              return !previousValue;
+            });
+          })
+          .catch((error) => {
+            handleSendMessageError()
+          })
+        }
     };
 
     const handleEditError = () => {   
@@ -146,7 +151,7 @@ export const SingleChat = () => {
                         <p className="enter-non-whistespace-prompt-new-chat">Please enter a non-whitespace character</p>
                   }
               </form>
-              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete}/>
+              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete} messageSent={messageSent}/>
           </div> 
         </div>
       )

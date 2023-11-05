@@ -210,5 +210,6 @@ padding-left: 1rem;
     border: 0.5rem solid var(--first-color);
     border-radius: 20px;
     max-height: 25rem;
-    overflow-y: scroll;
+    overflow: scroll;
 }
+
