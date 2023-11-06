@@ -206,9 +206,9 @@ padding-left: 1rem;
     margin-left: 2rem;
 }
 .delete-message-button, .edit-message-button {
-    height: 2rem;
-    width: 6rem;
-    font-size: 1.5rem;
+    height: 1.9rem;
+    width: 5rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;;
 }
 .edit-message-button {
