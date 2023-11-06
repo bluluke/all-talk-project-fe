@@ -167,16 +167,17 @@ padding: 0;
     justify-content: center;
 }
 .message-card > * {
-    margin: 0.3rem; 
+    margin: 0.1rem; 
   }
   .time-of-sending {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 .this-user-message, .other-user-message {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     padding-right: 3rem;
     padding-left: 3rem;
     border: 0.4rem solid var(--second-color);
+    margin: -0.4rem;
 }
 .this-user-message {
     display: flex;
