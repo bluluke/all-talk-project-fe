@@ -266,7 +266,9 @@ padding-left: 1rem;
     margin-bottom: 1rem;
 }
 #message-list {
-    margin: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
     border: 0.5rem solid var(--first-color);
     border-radius: 10px;
     max-height: 35rem;
