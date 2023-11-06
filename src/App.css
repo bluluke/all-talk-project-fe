@@ -1,6 +1,6 @@
 :root {
-    --first-color: rgb(10, 32, 70);
-    --second-color: rgb(255, 249, 243);
+    --first-color: rgb(30, 57, 101);
+    --second-color: rgb(236, 236, 236);
     --third-color: rgb(253, 198, 142); 
     --red-color: rgb(200, 5, 5);
     --red-hover-color: rgb(162, 1, 1);
@@ -145,7 +145,7 @@ margin-bottom: -1.5rem;
 padding: 0;
 }
 .single-chat-name {
-    font-size: 2.4rem;
+    font-size: 2.rem;
     color: var(--first-color);
 }
 .home-link {
