@@ -69,6 +69,7 @@ input {
     margin-bottom: 0.8rem;
     padding: 0.1rem;
     text-align: center;
+    border: 7px solid black;
     border-radius: 80px;
 }
 .chat-card-container:hover {
