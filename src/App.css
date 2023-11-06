@@ -140,8 +140,8 @@ input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
    margin-bottom: -1rem;
 }
 #single-chat-nav > *{
-margin-top: -1.5rem;
-margin-bottom: -1.5rem;
+margin-top: -1.2rem;
+margin-bottom: -1.2rem;
 padding: 0;
 }
 .single-chat-name {
