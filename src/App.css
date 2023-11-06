@@ -79,7 +79,7 @@ input {
 }
 .chat-card-heading {
     color: var(--second-color);
-    font-size: 2.5rem;
+    font-size: 2.3rem;
 }
 .chat-link {
     text-align: center;
