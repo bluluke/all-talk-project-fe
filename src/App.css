@@ -22,7 +22,7 @@ html {
     margin: 0;
     background-color: var(--second-color);
     color: var(--first-color);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Inter', sans-serif;
 }
 body {
     width: 100%;
