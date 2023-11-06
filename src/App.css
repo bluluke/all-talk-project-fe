@@ -66,8 +66,8 @@ input {
 .chat-card-container {
     background-color: var(--first-color);
     margin-right: 2.5rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
+    margin-bottom: 0.8rem;
+    padding: 0.1rem;
     text-align: center;
     border-radius: 80px;
 }
@@ -80,6 +80,9 @@ input {
 .chat-card-heading {
     color: var(--second-color);
     font-size: 2.3rem;
+}
+.chat-card {
+    margin: -1rem;
 }
 .chat-link {
     text-align: center;
