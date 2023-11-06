@@ -28,6 +28,7 @@ body {
     width: 100%;
     max-width: 1220px;
     background-color: var(--second-color);
+    margin: 0;
 }
 
 ul {
@@ -262,6 +263,7 @@ padding-left: 1rem;
 #chat-creator {
     font-size: 1.7rem;
     margin-left: 2rem;
+    margin-bottom: 1rem;
 }
 #message-list {
     margin-top: 1rem;
