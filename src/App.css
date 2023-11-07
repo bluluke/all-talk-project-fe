@@ -120,7 +120,7 @@ input {
     background-color: var(--red-active-color);
 }
 #click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
-    margin-left: 2.5rem;;
+    margin-left: 2.5rem;
 }
 #create-chat-button {
     background-color: var(--greeen-color);
@@ -135,6 +135,8 @@ input {
 #chatNameInput {
     height: 2rem;
     width: 25rem;
+    margin-right: -1.5rem;
+    margin-top: 0.8rem;
 }
 input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
     font-size: 1.5rem;
@@ -148,7 +150,8 @@ input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
 #create-chat-button {
     width: 20rem;
     height: 2.3rem;
-    margin-left: 1rem;
+    margin-left: 2.5rem;
+    margin-top: 0.8rem;
 }
 
 
