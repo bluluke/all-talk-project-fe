@@ -313,10 +313,22 @@ padding-left: 1rem;
     #header-container {
         font-size: 1.6rem;
     }
+    .chat-card-heading {
+        font-size: 1.3rem;
+    }
 }
 
-@media (max-width: 250px) {
+@media (max-width: 260px) {
     #header-container {
         font-size: 1.2rem;
+    }
+    .chat-card-heading {
+        font-size: 1.1rem;
+    }
+    .chat-card {
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
