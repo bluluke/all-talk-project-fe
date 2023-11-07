@@ -331,6 +331,9 @@ padding-left: 1rem;
     #type-name-for-new-chat-instruction {
         font-size: 1.4rem;
     }
+    #click-chat-instruction {
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-width: 260px) {
@@ -346,6 +349,9 @@ padding-left: 1rem;
         margin-bottom: 0.6rem;
     }
     #type-name-for-new-chat-instruction {
+        font-size: 1.2rem;
+    }
+    #click-chat-instruction {
         font-size: 1.2rem;
     }
 }
