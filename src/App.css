@@ -108,7 +108,7 @@ input {
 }
 .delete-chat-button {
     height: 2.5rem;
-    margin-bottom: 0.5rem;;
+    margin-bottom: 0.5rem;
     text-align: center;
     background-color: var(--red-color);
     color: var(--second-color)
@@ -309,12 +309,18 @@ padding-left: 1rem;
     max-height: 35rem;
     overflow: scroll;
 }
-@media (max-width: 325px) {
+@media (max-width: 380px) {
     #header-container {
         font-size: 1.6rem;
     }
     .chat-card-heading {
         font-size: 1.3rem;
+    }
+    .delete-chat-button {
+        font-size: 1.2rem;
+        height: 2rem;
+        margin-bottom: 0.6rem;
+        margin-top: 0.2rem;
     }
 }
 
@@ -330,5 +336,10 @@ padding-left: 1rem;
         padding-bottom: 0.7rem;
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+    .delete-chat-button {
+        font-size: 1rem;
+        height: 1.8rem;
+        margin-bottom: 0.6rem;
     }
 }
