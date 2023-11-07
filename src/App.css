@@ -309,4 +309,14 @@ padding-left: 1rem;
     max-height: 35rem;
     overflow: scroll;
 }
+@media (max-width: 325px) {
+    #header-container {
+        font-size: 1.6rem;
+    }
+}
 
+@media (max-width: 250px) {
+    #header-container {
+        font-size: 1.2rem;
+    }
+}
