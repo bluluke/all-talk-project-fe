@@ -141,7 +141,8 @@ input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
 }
 .enter-non-whistespace-prompt-new-chat {
     color: var(--red-color);
-    margin-left: 2rem;
+    margin-left: 2.4rem;
+    margin-top: 0.5rem;
 }
 
 #create-chat-button {
