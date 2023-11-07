@@ -347,6 +347,18 @@ padding-left: 1rem;
     .enter-non-whistespace-prompt-new-chat {
         font-size: 1.4rem;
     }
+    #create-chat-button {
+        font-size: 1.3rem;
+        width: 17rem;
+    }
+}
+
+@media (max-width: 340px){
+    #create-chat-button {
+        font-size: 1.3rem;
+        width: 11rem;
+        height: 3.5rem;
+    }
 }
 
 @media (max-width: 260px) {
@@ -374,5 +386,10 @@ padding-left: 1rem;
     }
     .enter-non-whistespace-prompt-new-chat {
         font-size: 1.2rem;
+    }
+    #create-chat-button {
+        font-size: 1.1rem;
+        width: 9rem;
+        height: 3.5rem;
     }
 }
