@@ -227,13 +227,17 @@ padding-left: 1rem;
 .edit-message-button:active {
     background-color: var(--blue-active-color);
 }
+.edit-message-input {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
 .submit-edited-message-button {
     background-color: var(--blue-color);
     color: var(--second-color);
     font-size: 1.5rem;
     width: 20rem;
     height: 2rem;
-    margin-left: 0.5rem;
+    margin-bottom: 1rem;
 }
 .submit-edited-message-button:hover {
     background-color: var(--blue-hover-color);
