@@ -134,7 +134,7 @@ export const SingleChat = () => {
         handleDeleteError();
       })
     }
-    if(isLoading) return <p>Loading... </p>
+    if(isLoading) return <p className="loading-feedback">Loading... </p>
       return (
         <div>
           <div id="chat-container">

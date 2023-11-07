@@ -34,7 +34,7 @@ const handleDeletechat = (_id) => {
         setIdOfChatToDelete('')
     })
 }
-if(isLoading) return <p>Loading... </p>;
+if(isLoading) return <p className="loading-feedback">Loading... </p>;
 return (
     <section id="chat-list-container">
         <h2 id="click-chat-instruction">Click a chat to join</h2>

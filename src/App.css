@@ -43,7 +43,23 @@ input {
     color: var(--first-color);
     border-radius: 8px;
 }
-
+@keyframes colorRipple {
+    0% {
+      color: var(--first-color); 
+    }
+    50% {
+      color: rgb(82, 138, 229); 
+    }
+    100% {
+      color: var(--first-color); 
+    }
+  }
+.loading-feedback {
+    margin-left: 2rem;
+    font-family: "roboto", sans-serif;
+    font-size: 3rem;
+    animation: colorRipple 2s infinite;
+}
 #home-container {
     background-color: var(--second-color);
 }
@@ -244,6 +260,14 @@ padding-left: 1rem;
 }
 .submit-edited-message-button:active {
     background-color: var(--blue-active-color);
+}
+.message-edited-feedback {
+    position: relative;
+    bottom: 1rem;
+    float: right;
+    margin-bottom: -1rem;
+    font-family: "roboto";
+    color: black;
 }
 .delete-message-button {
     background-color: var(--red-color);

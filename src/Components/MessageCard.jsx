@@ -3,10 +3,12 @@ import { UserContext } from '../contexts/User'
 
 export const MessageCard = ({_id, senderName, messageContent, timeOfSending, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete, editMessage, setEditMessage}) => {
     const [messageToUpdate, setMessageToUpdate] = useState(messageContent)
+    const [messageEdited, setMessageEdited] = useState(false);
     const user = useContext(UserContext)
 
     const handleSubmitEdit = (e) => {
         e.preventDefault();
+        setMessageEdited(true)
         setEditInProgress(true)
         setIdOfMessageToEdit(_id)
         handleEditMessage(_id, messageToUpdate);
@@ -28,6 +30,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
             <div>
                 <button className="delete-message-button" onClick={handleDeleteMessagePress}>Delete</button>
                 <button className="edit-message-button" onClick={() => setEditMessage(true)}>Edit</button>  
+                {messageEdited && <p className="message-edited-feedback">Edited</p>}
                 {editMessage === true && (
                     <div>
                      <br></br>   
