@@ -87,7 +87,9 @@ input {
     text-align: center;
     border: 7px solid black;
     border-radius: 80px;
+    overflow-wrap: break-word;
 }
+
 .chat-card-container:hover {
     background-color: var(--blue-color);
 }
