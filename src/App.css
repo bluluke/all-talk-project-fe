@@ -218,15 +218,13 @@ max-width: 82%;
   }
 .this-user-message, .other-user-message {
     font-size: 1.3rem;
-    padding-right: 3rem;
-    padding-left: 3rem;
     border: 0.4rem solid var(--second-color);
     margin: -0.4rem;
 }
+
 .this-user-message {
     display: flex;
 justify-content: flex-start;
-
 color: var(--first-color);
 padding-left: 1rem;
 }
@@ -240,6 +238,8 @@ padding-left: 1rem;
     display: flex;
     justify-content: flex-end;
     color: var(--second-color);
+    padding-right: 3rem; 
+    padding-left: 3rem;  
 }
 .other-user-message .message-card {
     background-color: var(--first-color);
