@@ -182,8 +182,6 @@ max-width: 50%;
 #home-nav {
     font-size: 1.4rem;
     color: var(--first-color);
-    margin-block-start: 0;
-    margin-block-end: 0;
 }
 .home-link:hover {
     color: var(--blue-color);
