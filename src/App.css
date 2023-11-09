@@ -235,7 +235,6 @@ max-width: 82%;
 .this-user-message, .other-user-message {
     font-size: 1.3rem;
     border: 0.4rem solid var(--second-color);
-    margin: -0.4rem;
 }
 
 .this-user-message {
