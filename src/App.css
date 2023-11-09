@@ -134,7 +134,7 @@ input {
 #create-chat-button:active {
     background-color: var(--green-active-color);
 }
-#chatNameInput, #message-box {
+#chatNameInput {
     height: 2rem;
     width: 25rem;
     margin-right: -1.5rem;
@@ -188,6 +188,11 @@ max-width: 82%;
 }
 .home-link:active {
     color: var(--blue-active-color)
+}
+#message-box {
+    height: 2rem;
+    width: 25rem;
+    margin-top: 0.8rem;
 }
 .message-card {
     padding: 0;
