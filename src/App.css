@@ -134,7 +134,7 @@ input {
 #create-chat-button:active {
     background-color: var(--green-active-color);
 }
-#chatNameInput {
+#chatNameInput, #message-box {
     height: 2rem;
     width: 25rem;
     margin-right: -1.5rem;
@@ -371,7 +371,7 @@ padding-left: 1rem;
 
 
 @media (max-width: 475px) {
-    #chatNameInput {
+    #chatNameInput, #message-box {
         width: 18rem;
     }
 }
@@ -401,7 +401,7 @@ padding-left: 1rem;
     #click-chat-instruction {
         font-size: 1.4rem;
     }
-    #chatNameInput {
+    #chatNameInput, #message-box {
         font-size: 1.4rem;
         height: 1.8rem;
         width: 12rem;
@@ -441,7 +441,7 @@ padding-left: 1rem;
     #click-chat-instruction {
         font-size: 1.1rem;
     }
-    #chatNameInput {
+    #chatNameInput, #message-box {
         font-size: 1.1rem;
         height: 1.6rem;
         width: 9rem;
