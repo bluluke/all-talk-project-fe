@@ -465,9 +465,9 @@ border: 2px solid green;
         margin-right: 0;
     }
     .message-card {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
-    .time-of-sending, .edit-message-button, .delete-message-button {
+    .time-of-sending {
         font-size: 0.8rem;
     }
     .edit-message-button, .delete-message-button {
