@@ -345,8 +345,11 @@ border: 2px solid green;
         padding-right: 1rem;
         font-size: 1.1rem;
     }
-    .time-of-sending {
+    .time-of-sending, .edit-message-button, .delete-message-button {
         font-size: 1rem;
+    }
+    .edit-message-button, .delete-message-button {
+        width: 4rem;
     }
 }
 
@@ -377,11 +380,15 @@ border: 2px solid green;
             padding-right: 0.4rem;
             font-size: 1rem;
         }
-        .time-of-sending {
+        .time-of-sending, .edit-message-button, .delete-message-button {
             font-size: 0.9rem;
         }
+        .edit-message-button, .delete-message-button {
+            width: 3.6rem;
+            height: 1.5rem;
+
+        }
         .this-user-message {
-    
         padding-left: 0;
         }
 }
@@ -448,14 +455,24 @@ border: 2px solid green;
     .message-card {
         font-size: 0.8rem;
     }
-    .time-of-sending {
+    .time-of-sending, .edit-message-button, .delete-message-button {
         font-size: 0.8rem;
+    }
+    .edit-message-button, .delete-message-button {
+        height: 1.2rem;
+        width: 3.1rem;
+        padding: 0;
+        margin: 0;
     }
 }
 
 
 
 
+
+
+
+/* home page break points*/
 @media (max-width: 475px) {
     #chatNameInput {
         width: 18rem;
