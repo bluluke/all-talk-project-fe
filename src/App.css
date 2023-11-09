@@ -374,6 +374,10 @@ border: 2px solid green;
         .enter-non-whistespace-prompt-new-message {
             font-size: 1.3rem;
         }
+        #message-list {
+            margin-left: 7%;
+            margin-right: 7%;
+        }
         .message-card {
             min-width: 65%;
             padding-left: 0.4rem;
@@ -424,6 +428,10 @@ border: 2px solid green;
         .enter-non-whistespace-prompt-new-message {
             font-size: 1.1rem;
         }
+        #message-list {
+            margin-left: 3%;
+            margin-right: 3%;
+        }
 }
 @media (max-width: 300px) {
     #single-chat-nav > *{
@@ -451,6 +459,10 @@ border: 2px solid green;
     }
     .enter-non-whistespace-prompt-new-message {
         font-size: 1rem;
+    }
+    #message-list {
+        margin-left: 0;
+        margin-right: 0;
     }
     .message-card {
         font-size: 0.8rem;
