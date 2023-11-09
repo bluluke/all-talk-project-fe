@@ -222,6 +222,9 @@ max-width: 82%;
     flex-direction: column;
     justify-content: center;
     border: 2px solid red;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    border-radius: 15px;
 }
 .message-card > * {
     margin: 0.1rem; 
@@ -242,11 +245,8 @@ color: var(--first-color);
 padding-left: 1rem;
 border: 2px solid green;
 }
-.this-user-message  .message-card {
+.this-user-message > .message-card {
     background-color: var(--third-color);
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
-    border-radius: 15px;
 }
 .other-user-message {
     display: flex;
@@ -258,9 +258,6 @@ border: 2px solid green;
 }
 .other-user-message .message-card {
     background-color: var(--first-color);
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
-    border-radius: 15px;
 }
 .delete-message-button, .edit-message-button {
     height: 1.9rem;
