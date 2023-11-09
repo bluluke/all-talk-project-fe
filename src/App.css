@@ -216,7 +216,7 @@ max-width: 82%;
     border: 10px solid pink;
 }
 .message-card {
-    padding: 0;
+    font-size: 1.3rem;
     border: 2px solid black;
     display: flex;
     flex-direction: column;
@@ -225,15 +225,16 @@ max-width: 82%;
     padding-right: 2.5rem;
     padding-left: 2.5rem;
     border-radius: 15px;
+    overflow-wrap: break-word;
 }
 .message-card > * {
     margin: 0.1rem; 
+    overflow-wrap: break-word;
   }
   .time-of-sending {
     font-size: 1.1rem;
   }
 .this-user-message, .other-user-message {
-    font-size: 1.3rem;
     border: 0.4rem solid var(--second-color);
 }
 
@@ -332,8 +333,22 @@ border: 2px solid green;
     overflow-wrap: break-word;
 }
 
-
-
+@media (max-width: 700px) {
+    #message-list > ul {
+      padding-inline-start: 0;
+    }
+}
+@media (max-width: 650px) {
+    .message-card {
+        min-width: 60%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1.1rem;
+    }
+    .time-of-sending {
+        font-size: 1rem;
+    }
+}
 
 @media (max-width: 500px) {
         .single-chat-name {
@@ -355,6 +370,19 @@ border: 2px solid green;
         }
         .enter-non-whistespace-prompt-new-message {
             font-size: 1.3rem;
+        }
+        .message-card {
+            min-width: 65%;
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+            font-size: 1rem;
+        }
+        .time-of-sending {
+            font-size: 0.9rem;
+        }
+        .this-user-message {
+    
+        padding-left: 0;
         }
 }
 @media (max-width: 400px) {
@@ -416,6 +444,12 @@ border: 2px solid green;
     }
     .enter-non-whistespace-prompt-new-message {
         font-size: 1rem;
+    }
+    .message-card {
+        font-size: 0.8rem;
+    }
+    .time-of-sending {
+        font-size: 0.8rem;
     }
 }
 
