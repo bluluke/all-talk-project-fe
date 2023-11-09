@@ -170,17 +170,18 @@ input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
    margin-bottom: -1rem;
 }
 #single-chat-nav > *{
-margin-top: -1.2rem;
-margin-bottom: -1.2rem;
-padding: 0;
+margin-block-start: 0.2rem;
+margin-block-end: 0.2rem;
 }
 .single-chat-name {
     font-size: 2.4rem;
     color: var(--first-color);
 }
-.home-link {
-    font-size: 1.8rem;
+#home-nav {
+    font-size: 1.4rem;
     color: var(--first-color);
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 .home-link:hover {
     color: var(--blue-color);
