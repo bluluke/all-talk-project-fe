@@ -203,6 +203,18 @@ max-width: 82%;
     margin-top: 0.5rem;
     font-size: 1.4rem;
 }
+#message-list {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    border: 0.5rem solid var(--first-color);
+    border-radius: 10px;
+    max-height: 35rem;
+    overflow: scroll;
+}
+#message-list > ul {
+    border: 10px solid pink;
+}
 .message-card {
     padding: 0;
     border: 2px solid black;
@@ -323,15 +335,7 @@ border: 2px solid green;
     margin-bottom: 1rem;
     overflow-wrap: break-word;
 }
-#message-list {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 1rem;
-    border: 0.5rem solid var(--first-color);
-    border-radius: 10px;
-    max-height: 35rem;
-    overflow: scroll;
-}
+
 
 
 
