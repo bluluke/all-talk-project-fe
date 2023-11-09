@@ -173,7 +173,7 @@ input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
 #single-chat-nav > *{
 margin-block-start: 0.4rem;
 margin-block-end: 0.4rem;
-max-width: 50%;
+max-width: 70%;
 }
 .single-chat-name {
     font-size: 2.4rem;
