@@ -189,9 +189,13 @@ max-width: 82%;
 .home-link:active {
     color: var(--blue-active-color)
 }
+#message-form {
+    margin-left: 2rem;
+}
 #message-box {
     height: 2rem;
     width: 25rem;
+    margin-right: 1rem;
     margin-top: 0.8rem;
 }
 .message-card {
@@ -237,9 +241,6 @@ padding-left: 1rem;
     padding-right: 2.5rem;
     padding-left: 2.5rem;
     border-radius: 15px;
-}
-#message-form {
-    margin-left: 2rem;
 }
 .delete-message-button, .edit-message-button {
     height: 1.9rem;
@@ -298,7 +299,7 @@ padding-left: 1rem;
     height: 2rem;
     width: 10rem;
     font-size: 1.5rem;
-    margin-left: 0.5rem;
+    margin-top: 0.8rem;
     background-color: var(--greeen-color);
     color: var(--second-color)
 }
@@ -357,8 +358,10 @@ padding-left: 1rem;
             font-size: 1.2rem;
             margin-left: 1rem;
         }
+        #message-form {
+           margin-left: 1rem; 
+        }
         #message-box {
-            margin-left: -1rem;
             margin-top: 0;
             font-size: 1.2rem;
             width: 14rem;
@@ -381,8 +384,10 @@ padding-left: 1rem;
         font-size: 1rem;
         margin-left: 0.2rem;
     }
+    #message-form {
+        margin-left: 0.2rem;
+    }
     #message-box {
-        margin-left: -1.8rem;
         margin-top: -1rem;
         font-size: 1rem;
         width: 10rem;
