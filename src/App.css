@@ -237,16 +237,20 @@ max-width: 82%;
     margin-left: -2.6rem;
     margin-right: -2.6rem;
     margin-top: 0.8rem;
+}
+.sender-name, .time-of-sending {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
-    padding-left: 2.6rem;
+    padding-left: 1.5rem;
 }
-.this-user-message .sender-name {
+.this-user-message .sender-name, .this-user-message .time-of-sending {
     background-color: var(--first-color);
     color: var(--second-color);
 }
 .time-of-sending {
     font-size: 1.1rem;
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
   }
 .this-user-message, .other-user-message {
     border: 0.4rem solid var(--second-color);
