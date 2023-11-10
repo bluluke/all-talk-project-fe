@@ -277,7 +277,8 @@ border: 2px solid green;
     background-color: var(--blue-active-color);
 }
 .edit-message-input {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
     margin-right: 1rem;
 }
 .submit-edited-message-button {
@@ -354,6 +355,10 @@ border: 2px solid green;
     }
     .submit-edited-message-button {
         width: 16rem;
+        height: 1.5rem;
+    }
+    .edit-message-input {
+        margin-bottom: 0.6rem;
     }
 }
 
@@ -398,7 +403,6 @@ border: 2px solid green;
         }
         .submit-edited-message-button {
             width: 12rem;
-            height: 1.5rem;
         }
         .this-user-message {
         padding-left: 0;
