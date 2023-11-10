@@ -30,7 +30,6 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
             <div>
                 <button className="delete-message-button" onClick={handleDeleteMessagePress}>Delete</button>
                 <button className="edit-message-button" onClick={() => setEditMessage(true)}>Edit</button>  
-                {messageEdited && <p className="message-edited-feedback">Edited</p>}
                 {editMessage === true && (
                     <div>
                      <form onSubmit={handleSubmitEdit}>

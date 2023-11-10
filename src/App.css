@@ -302,19 +302,6 @@ border: 2px solid green;
 .submit-edited-message-button:active {
     background-color: var(--blue-active-color);
 }
-.message-edited-feedback {
-    display: inline;
-    position: relative;
-    bottom: 1rem;
-    float: right;
-    margin-block-end: 0;
-    margin-bottom: -1rem;
-    margin-top: 1.2rem;
-    margin-left: 3rem;
-    font-family: "roboto";
-    font-size: 1.3rem;
-    color: black;
-}
 .delete-message-button {
     background-color: var(--red-color);
     color: var(--second-color)
@@ -357,7 +344,7 @@ border: 2px solid green;
         padding-right: 1rem;
         font-size: 1.1rem;
     }
-    .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input, .message-edited-feedback {
+    .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
         font-size: 1rem;
     }
     .delete-message-button, .edit-message-button, .submit-edited-message-button {
@@ -411,7 +398,7 @@ border: 2px solid green;
             padding-right: 0.4rem;
             font-size: 1rem;
         }
-        .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input,  .message-edited-feedback {
+        .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
             font-size: 0.9rem;
         }
          .delete-message-button {
