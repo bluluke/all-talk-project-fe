@@ -16,6 +16,7 @@ export const SingleChat = () => {
     const [message, setMessage] = useState('');
     const [messageList, setMessageList] = useState([]);
     const [idOfMessageToEdit, setIdOfMessageToEdit] = useState('');
+    const [idOfMessageBeingEdited, setIdOfMessageBeingEdited] = useState('');
     const [deleteInProgress, setDeleteInProgress] = useState(false);
     const [idOfMessageToDelete, setIdOfMessageToDelete] = useState('')
     const [messageSent, setMessageSent] = useState(false);
@@ -154,7 +155,7 @@ export const SingleChat = () => {
                         <p className="enter-non-whistespace-prompt-new-message">Please enter a non-whitespace character</p>
                   }
               </form>
-              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete} messageSent={messageSent} setMessageSent={setMessageSent}/>
+              <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} idOfMessageBeingEdited={idOfMessageBeingEdited} setIdOfMessageBeingEdited={setIdOfMessageBeingEdited} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete} messageSent={messageSent} setMessageSent={setMessageSent}/>
           </div> 
         </div>
       )
