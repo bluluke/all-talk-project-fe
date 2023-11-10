@@ -217,13 +217,14 @@ max-width: 82%;
 }
 .message-card {
     font-size: 1.3rem;
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid red;
+    max-width: 90%;
     padding-right: 2.5rem;
     padding-left: 2.5rem;
+    border: 2px solid black;
+    border: 2px solid red;
     border-radius: 15px;
     overflow-wrap: break-word;
 }
