@@ -369,6 +369,7 @@ border: 2px solid green;
     }
     .edit-message-input {
         margin-bottom: 0.6rem;
+        margin-right: 0.5rem;
     }
 }
 
@@ -412,6 +413,9 @@ border: 2px solid green;
         }
         .edit-message-button {
             width: 2.5rem;
+        }
+        .edit-message-input {
+            margin-top: 0.3rem;
         }
         .submit-edited-message-button {
             width: 10.5rem;
@@ -510,6 +514,7 @@ border: 2px solid green;
     }
     .edit-message-input {
         width: 8rem;
+        margin-bottom: 0.4rem;
     }
 }
 
