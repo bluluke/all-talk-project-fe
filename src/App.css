@@ -285,7 +285,7 @@ border: 2px solid green;
     background-color: var(--blue-color);
     color: var(--second-color);
     font-size: 1.4rem;
-    width: 20rem;
+    width: 16rem;
     height: 2rem;
     margin-bottom: 1rem;
     margin-top: -1rem;
@@ -354,7 +354,7 @@ border: 2px solid green;
         width: 4rem;
     }
     .submit-edited-message-button {
-        width: 16rem;
+        width: 12rem;
         height: 1.5rem;
     }
     .edit-message-input {
@@ -402,7 +402,7 @@ border: 2px solid green;
 
         }
         .submit-edited-message-button {
-            width: 12rem;
+            width: 10.5rem;
         }
         .this-user-message {
         padding-left: 0;
@@ -489,7 +489,7 @@ border: 2px solid green;
     }
     .submit-edited-message-button {
         height: 2.4rem;
-        width: 7rem;
+        width: 6.5rem;
     }
     .edit-message-input {
         width: 8rem;
