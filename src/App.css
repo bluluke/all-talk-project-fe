@@ -247,10 +247,17 @@ max-width: 82%;
     background-color: var(--first-color);
     color: var(--second-color);
 }
+.other-user-message .sender-name, .other-user-message .time-of-sending {
+    background-color: var(--third-color);
+    color: var(--first-color)
+}
 .time-of-sending {
     font-size: 1.1rem;
     margin-left: -2.5rem;
     margin-right: -2.5rem;
+  }
+  .other-user-message .time-of-sending {
+    margin-bottom: 0.8rem;
   }
 .this-user-message, .other-user-message {
     border: 0.4rem solid var(--second-color);
