@@ -357,7 +357,7 @@ border: 2px solid green;
         padding-right: 1rem;
         font-size: 1.1rem;
     }
-    .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
+    .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input, .message-edited-feedback {
         font-size: 1rem;
     }
     .delete-message-button, .edit-message-button, .submit-edited-message-button {
@@ -368,6 +368,9 @@ border: 2px solid green;
     }
     .edit-message-button {
         width: 2.7rem;
+    }
+    .message-edited-feedback {
+        margin-left: 1rem;
     }
     .submit-edited-message-button {
         width: 12rem;
@@ -409,7 +412,7 @@ border: 2px solid green;
             padding-right: 0.4rem;
             font-size: 1rem;
         }
-        .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
+        .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input,  .message-edited-feedback {
             font-size: 0.9rem;
         }
          .delete-message-button {
