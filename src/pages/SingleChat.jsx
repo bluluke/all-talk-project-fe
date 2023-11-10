@@ -151,7 +151,7 @@ export const SingleChat = () => {
                     <button id="submit-message" onClick={handleSendMessage}>Submit</button>
                   }
                   {onlyWhiteSpaceCharactersPresentRegex.test(message) && 
-                        <p className="enter-non-whistespace-prompt-new-chat">Please enter a non-whitespace character</p>
+                        <p className="enter-non-whistespace-prompt-new-message">Please enter a non-whitespace character</p>
                   }
               </form>
               <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete} messageSent={messageSent} setMessageSent={setMessageSent}/>

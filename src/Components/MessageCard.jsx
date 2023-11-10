@@ -24,16 +24,14 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
     if(editInProgress && idOfMessageToEdit === _id) return <p>Edit in progress...</p>
     return (
        <div className="message-card">
-            <p>{senderName}: {messageContent}</p>
+            <p><span className="sender-name">{senderName}:</span> <span className="message-content">{messageContent}</span></p>
             <p className="time-of-sending">{timeOfSending}</p>
             {user.user === senderName && (
             <div>
                 <button className="delete-message-button" onClick={handleDeleteMessagePress}>Delete</button>
                 <button className="edit-message-button" onClick={() => setEditMessage(true)}>Edit</button>  
-                {messageEdited && <p className="message-edited-feedback">Edited</p>}
                 {editMessage === true && (
                     <div>
-                     <br></br>   
                      <form onSubmit={handleSubmitEdit}>
                      <input className={"edit-message-input"} value={messageToUpdate} onChange={(e) => setMessageToUpdate(e.target.value)} ></input>
                      <button className="submit-edited-message-button">Submit edited message</button>
@@ -45,3 +43,9 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
        </div>
     )
 }
+
+
+
+
+
+

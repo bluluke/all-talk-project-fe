@@ -168,18 +168,19 @@ input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat
    padding-right: 2rem;
    background-color: var(--third-color);
    margin-bottom: -1rem;
+   overflow-wrap: break-word;
 }
 #single-chat-nav > *{
-margin-top: -1.2rem;
-margin-bottom: -1.2rem;
-padding: 0;
+margin-block-start: 0.4rem;
+margin-block-end: 0.4rem;
+max-width: 82%;
 }
 .single-chat-name {
     font-size: 2.4rem;
     color: var(--first-color);
 }
-.home-link {
-    font-size: 1.8rem;
+#home-nav {
+    font-size: 1.4rem;
     color: var(--first-color);
 }
 .home-link:hover {
@@ -188,58 +189,112 @@ padding: 0;
 .home-link:active {
     color: var(--blue-active-color)
 }
+#message-form {
+    margin-left: 2rem;
+}
+#message-box {
+    height: 2rem;
+    width: 25rem;
+    margin-right: 1rem;
+    margin-top: 0.8rem;
+}
+.enter-non-whistespace-prompt-new-message {
+    color: var(--red-color);
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+}
+#message-list {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    border: 0.5rem solid var(--first-color);
+    border-radius: 10px;
+    max-height: 35rem;
+    overflow: scroll;
+}
 .message-card {
-    padding: 0;
-    border: 2px solid black;
+    font-size: 1.3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 90%;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    overflow-wrap: break-word;
 }
 .message-card > * {
     margin: 0.1rem; 
-  }
-  .time-of-sending {
+    overflow-wrap: break-word;
+}
+.sender-name {
+    display: block;
+    margin-left: -2.6rem;
+    margin-right: -2.6rem;
+    margin-top: 0.8rem;
+}
+.message-content {
+    display: block;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+.sender-name, .time-of-sending {
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 1.5rem;
+}
+.this-user-message .sender-name, .this-user-message .time-of-sending {
+    background-color: var(--first-color);
+    color: var(--second-color);
+}
+.other-user-message .sender-name, .other-user-message .time-of-sending {
+    background-color: var(--third-color);
+    color: var(--first-color)
+}
+.time-of-sending {
     font-size: 1.1rem;
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+  }
+  .other-user-message .time-of-sending {
+    margin-bottom: 0.8rem;
   }
 .this-user-message, .other-user-message {
-    font-size: 1.3rem;
-    padding-right: 3rem;
-    padding-left: 3rem;
     border: 0.4rem solid var(--second-color);
-    margin: -0.4rem;
 }
+
 .this-user-message {
     display: flex;
 justify-content: flex-start;
-
 color: var(--first-color);
 padding-left: 1rem;
 }
-.this-user-message  .message-card {
+.this-user-message > .message-card {
     background-color: var(--third-color);
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
-    border-radius: 15px;
 }
 .other-user-message {
     display: flex;
     justify-content: flex-end;
     color: var(--second-color);
+    padding-right: 3rem; 
+    padding-left: 3rem;  
 }
 .other-user-message .message-card {
     background-color: var(--first-color);
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
-    border-radius: 15px;
-}
-#message-form {
-    margin-left: 2rem;
+    position: relative;
+    left: 2.5rem;
 }
 .delete-message-button, .edit-message-button {
     height: 1.9rem;
-    width: 5rem;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;;
+}
+.delete-chat-button {
+    width: 5rem;
+}
+.edit-message-button {
+    width: 3.5rem;
 }
 .edit-message-button {
     margin-left: 0.5rem;
@@ -253,30 +308,24 @@ padding-left: 1rem;
     background-color: var(--blue-active-color);
 }
 .edit-message-input {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
     margin-right: 1rem;
 }
 .submit-edited-message-button {
     background-color: var(--blue-color);
     color: var(--second-color);
-    font-size: 1.5rem;
-    width: 20rem;
+    font-size: 1.4rem;
+    width: 16rem;
     height: 2rem;
     margin-bottom: 1rem;
+    margin-top: -1rem;
 }
 .submit-edited-message-button:hover {
     background-color: var(--blue-hover-color);
 }
 .submit-edited-message-button:active {
     background-color: var(--blue-active-color);
-}
-.message-edited-feedback {
-    position: relative;
-    bottom: 1rem;
-    float: right;
-    margin-bottom: -1rem;
-    font-family: "roboto";
-    color: black;
 }
 .delete-message-button {
     background-color: var(--red-color);
@@ -292,7 +341,7 @@ padding-left: 1rem;
     height: 2rem;
     width: 10rem;
     font-size: 1.5rem;
-    margin-left: 0.5rem;
+    margin-top: 0.8rem;
     background-color: var(--greeen-color);
     color: var(--second-color)
 }
@@ -306,18 +355,239 @@ padding-left: 1rem;
     font-size: 1.7rem;
     margin-left: 2rem;
     margin-bottom: 1rem;
+    overflow-wrap: break-word;
 }
-#message-list {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 1rem;
-    border: 0.5rem solid var(--first-color);
-    border-radius: 10px;
-    max-height: 35rem;
-    overflow: scroll;
+
+@media (max-width: 700px) {
+    #message-list > ul {
+      padding-inline-start: 0;
+    }
+}
+@media (max-width: 650px) {
+    .message-card {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1.1rem;
+    }
+    .sender-name {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-left: -1.1rem;
+        margin-right: -1.1rem;
+    }
+    .time-of-sending {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
+    .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
+        font-size: 1rem;
+    }
+    .delete-message-button, .edit-message-button, .submit-edited-message-button {
+        height: 1.5rem;
+    }
+     .delete-message-button {
+        width: 3.9rem;
+    }
+    .edit-message-button {
+        width: 2.8rem;
+    }
+    .message-edited-feedback {
+        margin-left: 1rem;
+    }
+    .submit-edited-message-button {
+        width: 12rem;
+    }
+    .edit-message-input {
+        margin-bottom: 0.6rem;
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+        .single-chat-name {
+            font-size: 1.8rem;
+        }
+        #home-nav {
+            font-size: 1.2rem;
+        }
+        #chat-creator {
+            font-size: 1.4rem;
+        }
+        #message-box {
+            width: 18rem;
+            font-size: 1.4rem;
+        }
+        #submit-message {
+            font-size: 1.4rem;
+            width: 9rem;
+        }
+        .enter-non-whistespace-prompt-new-message {
+            font-size: 1.3rem;
+        }
+        #message-list {
+            margin-left: 7%;
+            margin-right: 7%;
+        }
+        .message-card {
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+            font-size: 1rem;
+            min-width: 8.5rem;
+        }
+        .sender-name {
+            padding-left: 0.2rem;
+            padding-right: 0.2rem;
+            margin-left: -0.5rem;
+            margin-right: -0.5rem;
+        }
+        .time-of-sending {
+            padding-left: 0.2rem;
+            padding-right: 0.2rem;
+            margin-left: -0.4rem;
+            margin-right: -0.4rem;
+          }
+        .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
+            font-size: 0.9rem;
+        }
+         .delete-message-button {
+            width: 3.7rem;
+            height: 1.5rem;
+        }
+        .edit-message-button {
+            width: 2.6rem;
+        }
+        .edit-message-input {
+            margin-top: 0.3rem;
+        }
+        .submit-edited-message-button {
+            width: 10.5rem;
+        }
+        .this-user-message {
+         padding-left: 0;
+        }
+}
+@media (max-width: 400px) {
+        .single-chat-name {
+            font-size: 1.4rem;
+            margin-left: -1rem;
+        }
+        #single-chat-nav > *{
+            max-width: 90%;
+        }
+        #home-nav {
+            font-size: 1rem;
+            margin-right: -1rem;
+        }
+        #chat-creator {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+        #message-form {
+           margin-left: 1rem; 
+        }
+        #message-box {
+            margin-top: 0;
+            font-size: 1.2rem;
+            width: 14rem;
+            height: 1.5rem;
+        }
+        #submit-message {
+            font-size: 1.2rem;
+            height: 1.8rem;
+        }
+        .enter-non-whistespace-prompt-new-message {
+            font-size: 1.1rem;
+        }
+        #message-list {
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+        .message-content {
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+        }
+}
+@media (max-width: 300px) {
+    #single-chat-nav > *{
+        max-width: 99%;
+    }
+    .single-chat-name {
+        font-size: 1.1rem;
+        margin-left: -1.8rem;
+    }
+    #home-nav {
+        font-size: 0.9rem;
+        margin-right: -1.8rem;
+    }
+    #chat-creator {
+        font-size: 1rem;
+        margin-left: 0.2rem;
+    }
+    #message-form {
+        margin-left: 0.2rem;
+    }
+    #message-box {
+        margin-top: -1rem;
+        font-size: 1rem;
+        width: 10rem;
+        height: 1rem;
+    }
+    .enter-non-whistespace-prompt-new-message {
+        font-size: 1rem;
+    }
+    #message-list {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .message-card {
+        font-size: 0.9rem;
+        min-width: 7.6rem;
+    }
+    .other-user-message .message-card{
+        position: relative;
+        left: 3.1rem;
+    }
+    .message-content {
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+    }
+    .time-of-sending {
+        font-size: 0.8rem;
+    }
+    .edit-message-button, .delete-message-button {
+        height: 1.2rem;
+        padding: 0;
+    }
+    .delete-message-button {
+        width: 3.1rem;
+    }
+    .edit-message-button {
+        width: 2.3rem;
+    }
+    .submit-edited-message-button {
+        height: 2.4rem;
+        width: 6.5rem;
+    }
+    .edit-message-input {
+        width: 8rem;
+        margin-bottom: 0.4rem;
+    }
+}
+@media (max-width: 190px) {
+    .other-user-message .message-card{
+        position: relative;
+        left: 3.5rem;
+    }
 }
 
 
+
+
+
+
+/* home page break points*/
 @media (max-width: 475px) {
     #chatNameInput {
         width: 18rem;
