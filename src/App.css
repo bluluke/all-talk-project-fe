@@ -507,6 +507,10 @@ border: 2px solid green;
             margin-left: 3%;
             margin-right: 3%;
         }
+        .message-content {
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+        }
 }
 @media (max-width: 300px) {
     #single-chat-nav > *{
@@ -541,6 +545,10 @@ border: 2px solid green;
     }
     .message-card {
         font-size: 0.9rem;
+    }
+    .message-content {
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
     }
     .time-of-sending {
         font-size: 0.8rem;
