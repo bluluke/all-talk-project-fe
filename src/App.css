@@ -238,6 +238,11 @@ max-width: 82%;
     margin-right: -2.6rem;
     margin-top: 0.8rem;
 }
+.message-content {
+    display: block;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
 .sender-name, .time-of-sending {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
