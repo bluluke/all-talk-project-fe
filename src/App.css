@@ -352,7 +352,6 @@ border: 2px solid green;
 }
 @media (max-width: 650px) {
     .message-card {
-        min-width: 60%;
         padding-left: 1rem;
         padding-right: 1rem;
         font-size: 1.1rem;
@@ -407,7 +406,6 @@ border: 2px solid green;
             margin-right: 7%;
         }
         .message-card {
-            min-width: 65%;
             padding-left: 0.4rem;
             padding-right: 0.4rem;
             font-size: 1rem;
