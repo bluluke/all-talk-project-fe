@@ -4,7 +4,6 @@ import { UserContext } from '../contexts/User'
 export const MessageCard = ({_id, senderName, messageContent, timeOfSending, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, idOfMessageBeingEdited, setIdOfMessageBeingEdited, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete, editMessage, setEditMessage}) => {
     const [messageToUpdate, setMessageToUpdate] = useState(messageContent)
     const [messageEdited, setMessageEdited] = useState(false);
-    const [showDeleteEditButtons, setShowDeleteEditButtons] = useState(false);
     const user = useContext(UserContext)
 
     const handleSubmitEdit = (e) => {
@@ -27,20 +26,14 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
         setEditMessage(true)
         setIdOfMessageBeingEdited(_id)
     }
-    const handleMessageCardClick = (e) => {
-        e.preventDefault();
-        setIdOfMessageBeingEdited(_id)
-        setShowDeleteEditButtons((previousValue) => {
-            return !previousValue
-        })
-    }
+
     if(deleteInProgress && idOfMessageToDelete === _id) return <p>Delete in progress...</p>
     if(editInProgress && idOfMessageToEdit === _id) return <p>Edit in progress...</p>
     return (
-       <div className="message-card" onClick={handleMessageCardClick}>
+       <div className="message-card">
             <p><span className="sender-name">{senderName}:</span> <span className="message-content">{messageContent}</span></p>
             <p className="time-of-sending">{timeOfSending}</p>
-            {user.user === senderName && idOfMessageBeingEdited === _id && showDeleteEditButtons && (
+            {user.user === senderName && (
             <div>
                 <button className="delete-message-button" onClick={handleDeleteMessagePress}>Delete</button>
                 <button className="edit-message-button" onClick={handleEdit}>Edit</button>  
