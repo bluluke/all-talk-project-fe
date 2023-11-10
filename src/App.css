@@ -538,6 +538,7 @@ border: 2px solid green;
         margin-top: -1rem;
         font-size: 1rem;
         width: 10rem;
+        height: 1rem;
     }
     .enter-non-whistespace-prompt-new-message {
         font-size: 1rem;
