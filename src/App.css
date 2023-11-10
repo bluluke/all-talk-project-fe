@@ -302,10 +302,14 @@ border: 2px solid green;
     background-color: var(--blue-active-color);
 }
 .message-edited-feedback {
+    display: inline;
     position: relative;
     bottom: 1rem;
     float: right;
+    margin-block-end: 0;
     margin-bottom: -1rem;
+    margin-top: 1.2rem;
+    margin-left: 3rem;
     font-family: "roboto";
     color: black;
 }
