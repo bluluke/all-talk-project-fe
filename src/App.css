@@ -362,9 +362,16 @@ border: 2px solid green;
         font-size: 1.1rem;
     }
     .sender-name {
+        padding-left: 0.5rem;
         margin-left: -1.1rem;
         margin-right: -1.1rem;
     }
+    .time-of-sending {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
     .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
         font-size: 1rem;
     }
@@ -423,6 +430,12 @@ border: 2px solid green;
             margin-left: -0.5rem;
             margin-right: -0.5rem;
         }
+        .time-of-sending {
+            padding-left: 0.2rem;
+            padding-right: 0.2rem;
+            margin-left: -0.4rem;
+            margin-right: -0.4rem;
+          }
         .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
             font-size: 0.9rem;
         }
