@@ -231,8 +231,21 @@ max-width: 82%;
 .message-card > * {
     margin: 0.1rem; 
     overflow-wrap: break-word;
-  }
-  .time-of-sending {
+}
+.sender-name {
+    display: block;
+    margin-left: -2.6rem;
+    margin-right: -2.6rem;
+    margin-top: 0.8rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 2.6rem;
+}
+.this-user-message .sender-name {
+    background-color: var(--first-color);
+    color: var(--second-color);
+}
+.time-of-sending {
     font-size: 1.1rem;
   }
 .this-user-message, .other-user-message {

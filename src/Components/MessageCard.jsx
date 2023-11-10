@@ -24,7 +24,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
     if(editInProgress && idOfMessageToEdit === _id) return <p>Edit in progress...</p>
     return (
        <div className="message-card">
-            <p>{senderName}: {messageContent}</p>
+            <p><span className="sender-name">{senderName}:</span> {messageContent}</p>
             <p className="time-of-sending">{timeOfSending}</p>
             {user.user === senderName && (
             <div>
@@ -43,3 +43,9 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
        </div>
     )
 }
+
+
+
+
+
+
