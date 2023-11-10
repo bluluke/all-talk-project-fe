@@ -288,6 +288,8 @@ border: 2px solid green;
 }
 .other-user-message .message-card {
     background-color: var(--first-color);
+    position: relative;
+    left: 2.5rem;
 }
 .delete-message-button, .edit-message-button {
     height: 1.9rem;
@@ -438,6 +440,7 @@ border: 2px solid green;
             padding-left: 0.4rem;
             padding-right: 0.4rem;
             font-size: 1rem;
+            min-width: 8.5rem;
         }
         .sender-name {
             padding-left: 0.2rem;
@@ -545,6 +548,11 @@ border: 2px solid green;
     }
     .message-card {
         font-size: 0.9rem;
+        min-width: 7.6rem;
+    }
+    .other-user-message .message-card{
+        position: relative;
+        left: 3.5rem;
     }
     .message-content {
         padding-top: 0.1rem;
