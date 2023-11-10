@@ -636,6 +636,10 @@ padding-left: 1rem;
         width: 11rem;
         height: 3.5rem;
     }
+    .chat-card-container {
+        margin-right: 1.5rem;
+        margin-left: -1rem;
+    }
 }
 
 @media (max-width: 260px) {
@@ -647,6 +651,10 @@ padding-left: 1rem;
     }
     .chat-card-heading {
         font-size: 1rem;
+    }
+    .chat-card-container {
+        margin-right: 0.5rem;
+        margin-left: -2rem;
     }
     .delete-chat-button {
         font-size: 0.9rem;
