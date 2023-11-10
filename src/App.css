@@ -311,6 +311,7 @@ border: 2px solid green;
     margin-top: 1.2rem;
     margin-left: 3rem;
     font-family: "roboto";
+    font-size: 1.3rem;
     color: black;
 }
 .delete-message-button {
