@@ -212,9 +212,6 @@ max-width: 82%;
     max-height: 35rem;
     overflow: scroll;
 }
-#message-list > ul {
-    border: 3px solid pink;
-}
 .message-card {
     font-size: 1.3rem;
     display: flex;
@@ -224,7 +221,6 @@ max-width: 82%;
     padding-right: 2.5rem;
     padding-left: 2.5rem;
     border: 2px solid black;
-    border: 2px solid red;
     border-radius: 15px;
     overflow-wrap: break-word;
 }
@@ -273,7 +269,6 @@ max-width: 82%;
 justify-content: flex-start;
 color: var(--first-color);
 padding-left: 1rem;
-border: 2px solid green;
 }
 .this-user-message > .message-card {
     background-color: var(--third-color);
@@ -284,7 +279,6 @@ border: 2px solid green;
     color: var(--second-color);
     padding-right: 3rem; 
     padding-left: 3rem;  
-    border: 2px solid orange;
 }
 .other-user-message .message-card {
     background-color: var(--first-color);
