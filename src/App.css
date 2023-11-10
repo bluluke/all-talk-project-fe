@@ -363,6 +363,7 @@ border: 2px solid green;
     }
     .sender-name {
         padding-left: 0.5rem;
+        padding-right: 0.5rem;
         margin-left: -1.1rem;
         margin-right: -1.1rem;
     }
@@ -427,6 +428,8 @@ border: 2px solid green;
             font-size: 1rem;
         }
         .sender-name {
+            padding-left: 0.2rem;
+            padding-right: 0.2rem;
             margin-left: -0.5rem;
             margin-right: -0.5rem;
         }
