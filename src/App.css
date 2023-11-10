@@ -639,6 +639,9 @@ padding-left: 1rem;
 }
 
 @media (max-width: 260px) {
+    #click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
+        margin-left: 0.5rem;
+    }
     #header-container {
         font-size: 1.2rem;
     }
