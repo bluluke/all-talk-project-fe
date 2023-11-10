@@ -261,9 +261,14 @@ border: 2px solid green;
 }
 .delete-message-button, .edit-message-button {
     height: 1.9rem;
-    width: 5rem;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;;
+}
+.delete-chat-button {
+    width: 5rem;
+}
+.edit-message-button {
+    width: 3.5rem;
 }
 .edit-message-button {
     margin-left: 0.5rem;
@@ -350,12 +355,17 @@ border: 2px solid green;
     .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
         font-size: 1rem;
     }
-    .edit-message-button, .delete-message-button {
-        width: 4rem;
+    .delete-message-button, .edit-message-button, .submit-edited-message-button {
+        height: 1.5rem;
+    }
+     .delete-message-button {
+        width: 3.9rem;
+    }
+    .edit-message-button {
+        width: 2.7rem;
     }
     .submit-edited-message-button {
         width: 12rem;
-        height: 1.5rem;
     }
     .edit-message-input {
         margin-bottom: 0.6rem;
@@ -396,16 +406,18 @@ border: 2px solid green;
         .time-of-sending, .edit-message-button, .delete-message-button, .submit-edited-message-button, .edit-message-input {
             font-size: 0.9rem;
         }
-        .edit-message-button, .delete-message-button {
+         .delete-message-button {
             width: 3.6rem;
             height: 1.5rem;
-
+        }
+        .edit-message-button {
+            width: 2.5rem;
         }
         .submit-edited-message-button {
             width: 10.5rem;
         }
         .this-user-message {
-        padding-left: 0;
+         padding-left: 0;
         }
 }
 @media (max-width: 400px) {
@@ -484,8 +496,13 @@ border: 2px solid green;
     }
     .edit-message-button, .delete-message-button {
         height: 1.2rem;
-        width: 3.1rem;
         padding: 0;
+    }
+    .delete-message-button {
+        width: 3.1rem;
+    }
+    .edit-message-button {
+        width: 2.3rem;
     }
     .submit-edited-message-button {
         height: 2.4rem;
