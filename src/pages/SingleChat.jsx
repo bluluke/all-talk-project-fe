@@ -17,6 +17,7 @@ export const SingleChat = () => {
     const [messageList, setMessageList] = useState([]);
     const [idOfMessageToEdit, setIdOfMessageToEdit] = useState('');
     const [idOfMessageBeingEdited, setIdOfMessageBeingEdited] = useState('');
+    const [idOfMessageCardButtonsShown, setIdOfMessageCardButtonsShown] = useState('')
     const [deleteInProgress, setDeleteInProgress] = useState(false);
     const [idOfMessageToDelete, setIdOfMessageToDelete] = useState('')
     const [messageSent, setMessageSent] = useState(false);
@@ -105,6 +106,7 @@ export const SingleChat = () => {
           setMessageList(updatedChatData.messages)
           setEditInProgress(false)  
           setIdOfMessageToEdit('')
+          setIdOfMessageCardButtonsShown('')
         })
       })
       .catch((error) => {
@@ -156,7 +158,7 @@ export const SingleChat = () => {
                   }
               </form>
               {messageList.length !== 0 &&
-                 <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} idOfMessageBeingEdited={idOfMessageBeingEdited} setIdOfMessageBeingEdited={setIdOfMessageBeingEdited} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete} messageSent={messageSent} setMessageSent={setMessageSent}/>
+                 <MessageList chatid={chatid} messageList={messageList} setMessageList={setMessageList} handleDeleteMessage={handleDeleteMessage} handleEditMessage={handleEditMessage} setEditInProgress={setEditInProgress} editInProgress={editInProgress} idOfMessageToEdit={idOfMessageToEdit} setIdOfMessageToEdit={setIdOfMessageToEdit} idOfMessageBeingEdited={idOfMessageBeingEdited} setIdOfMessageBeingEdited={setIdOfMessageBeingEdited} idOfMessageCardButtonsShown={idOfMessageCardButtonsShown} setIdOfMessageCardButtonsShown={ setIdOfMessageCardButtonsShown} deleteInProgress={deleteInProgress} setDeleteInProgress={setDeleteInProgress} idOfMessageToDelete={idOfMessageToDelete} setIdOfMessageToDelete={setIdOfMessageToDelete} messageSent={messageSent} setMessageSent={setMessageSent}/>
               }
           </div> 
         </div>
