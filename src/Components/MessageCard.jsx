@@ -29,11 +29,14 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
         setIdOfMessageBeingEdited(_id)
     }
     const handleDoubleClickMessageCard = () => {
-        setIdOfMessageCardButtonsShown(_id)
-        setEditMessage(false)
-        setShowButtons((previousValue) => {
-            return !previousValue
-        })
+        if(_id !== idOfMessageCardButtonsShown) {
+            setIdOfMessageCardButtonsShown(_id)
+            setShowButtons(true)
+        } else {
+        setIdOfMessageCardButtonsShown('')
+        setShowButtons(false)
+    }
+    setEditMessage(false)
     }
 
     if(deleteInProgress && idOfMessageToDelete === _id) return <p>Delete in progress...</p>
