@@ -29,6 +29,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
     }
     const handleDoubleClickMessageCard = () => {
         setIdOfMessageCardButtonsShown(_id)
+        setEditMessage(false)
         setShowButtons((previousValue) => {
             return !previousValue
         })
