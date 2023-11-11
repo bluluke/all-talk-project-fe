@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react';
 import { UserContext } from '../contexts/User'
 
-export const MessageCard = ({_id, senderName, messageContent, timeOfSending, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, idOfMessageBeingEdited, setIdOfMessageBeingEdited, idOfMessageCardButtonsShown, setIdOfMessageCardButtonsShown, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete, editMessage, setEditMessage}) => {
+export const MessageCard = ({_id, senderName, messageContent, timeOfSending, handleDeleteMessage, handleEditMessage, setEditInProgress, editInProgress, idOfMessageToEdit, setIdOfMessageToEdit, idOfMessageBeingEdited, setIdOfMessageBeingEdited, idOfMessageCardButtonsShown, setIdOfMessageCardButtonsShown, showButtons, setShowButtons, deleteInProgress, setDeleteInProgress, idOfMessageToDelete, setIdOfMessageToDelete, editMessage, setEditMessage}) => {
     const [messageToUpdate, setMessageToUpdate] = useState(messageContent)
     const [messageEdited, setMessageEdited] = useState(false);
-    // const [idOfMessageCardButtonsShown, setIdOfMessageCardButtonsShown] = useState('')
+    // const [showButtons, setShowButtons] = useState(false);
     const user = useContext(UserContext)
 
     const handleSubmitEdit = (e) => {
@@ -29,6 +29,9 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
     }
     const handleDoubleClickMessageCard = () => {
         setIdOfMessageCardButtonsShown(_id)
+        setShowButtons((previousValue) => {
+            return !previousValue
+        })
     }
 
     if(deleteInProgress && idOfMessageToDelete === _id) return <p>Delete in progress...</p>
@@ -37,7 +40,7 @@ export const MessageCard = ({_id, senderName, messageContent, timeOfSending, han
        <div className="message-card" onDoubleClick={handleDoubleClickMessageCard}>
             <p><span className="sender-name">{senderName}:</span> <span className="message-content">{messageContent}</span></p>
             <p className="time-of-sending">{timeOfSending}</p>
-            {user.user === senderName && idOfMessageCardButtonsShown === _id && (
+            {user.user === senderName && idOfMessageCardButtonsShown === _id && showButtons === true && (
                  <div >
                 <button className="delete-message-button" onClick={handleDeleteMessagePress}>Delete</button>
                 <button className="edit-message-button" onClick={handleEdit}>Edit</button>  
