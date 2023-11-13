@@ -211,6 +211,7 @@ max-width: 82%;
     border-radius: 10px;
     max-height: 35rem;
     overflow: scroll;
+    min-width: 160px;
 }
 .message-card {
     font-size: 1.3rem;
@@ -588,7 +589,7 @@ padding-left: 1rem;
 @media (max-width: 190px) {
     .other-user-message .message-card{
         position: relative;
-        left: 3.5rem;
+        left: 3.3rem;
     }
 }
 
