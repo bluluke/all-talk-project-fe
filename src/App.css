@@ -288,7 +288,8 @@ padding-left: 1rem;
 .delete-message-button, .edit-message-button {
     height: 1.9rem;
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
 }
 .edit-message-button {
     width: 3.5rem;
@@ -305,9 +306,9 @@ padding-left: 1rem;
     background-color: var(--blue-active-color);
 }
 .edit-message-input {
-    margin-bottom: 0.8rem;
-    margin-top: 0.5rem;
-    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0rem;
+    margin-right: 0.5rem;
 }
 .submit-edited-message-button {
     background-color: var(--blue-color);
