@@ -239,8 +239,8 @@ max-width: 82%;
     padding-bottom: 0.2rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    margin-left: -2.6rem;
-    margin-right: -2.6rem;
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
 }
 .sender-name, .time-of-sending {
     padding-top: 0.1rem;
@@ -373,8 +373,8 @@ padding-left: 1rem;
         margin-right: -1.1rem;
     }
     .message-content {
-        margin-left: -1.1rem;
-        margin-right: -1.1rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
     }
     .time-of-sending {
         padding-left: 0.5rem;
@@ -444,8 +444,8 @@ padding-left: 1rem;
             margin-right: -0.5rem;
         }
         .message-content {
-            margin-left: -0.5rem;
-            margin-right: -0.5rem;
+            margin-left: -0.4rem;
+            margin-right: -0.4rem;
         }
         .time-of-sending {
             padding-left: 0.2rem;
