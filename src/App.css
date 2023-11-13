@@ -248,8 +248,10 @@ max-width: 82%;
     padding-left: 1.5rem;
 }
 .this-user-message .sender-name, .this-user-message .time-of-sending {
-    background-color: var(--first-color);
     color: var(--second-color);
+}
+.this-user-message .message-content {
+    background-color: var(--second-color);
 }
 .other-user-message .sender-name, .other-user-message .time-of-sending {
     color: var(--first-color)
@@ -269,7 +271,8 @@ color: var(--first-color);
 padding-left: 1rem;
 }
 .this-user-message > .message-card {
-    background-color: var(--third-color);
+    /* background-color: var(--first-color); */
+    background-color: rgba(0, 0, 0, 0.663);
 }
 .other-user-message {
     display: flex;
