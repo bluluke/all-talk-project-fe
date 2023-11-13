@@ -225,20 +225,20 @@ max-width: 82%;
     overflow-wrap: break-word;
 }
 .message-card > * {
-    margin: 0.1rem; 
+    margin: 0rem; 
     overflow-wrap: break-word;
 }
 .sender-name {
     display: block;
     margin-left: -2.6rem;
-    margin-right: -2.6rem;
-    margin-top: 0.8rem;
 }
 .message-content {
     background-color: var(--first-color);
     display: block;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     margin-left: -2.6rem;
     margin-right: -2.6rem;
 }
@@ -256,11 +256,7 @@ max-width: 82%;
 }
 .time-of-sending {
     font-size: 1.1rem;
-    margin-left: -2.5rem;
-    margin-right: -2.5rem;
-  }
-  .other-user-message .time-of-sending {
-    margin-bottom: 0.8rem;
+    margin-left: -2.6rem;
   }
 .this-user-message, .other-user-message {
     border: 0.4rem solid var(--second-color);
