@@ -235,9 +235,12 @@ max-width: 82%;
     margin-top: 0.8rem;
 }
 .message-content {
+    background-color: var(--first-color);
     display: block;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
+    margin-left: -2.6rem;
+    margin-right: -2.6rem;
 }
 .sender-name, .time-of-sending {
     padding-top: 0.1rem;
@@ -249,7 +252,6 @@ max-width: 82%;
     color: var(--second-color);
 }
 .other-user-message .sender-name, .other-user-message .time-of-sending {
-    background-color: var(--third-color);
     color: var(--first-color)
 }
 .time-of-sending {
@@ -281,7 +283,7 @@ padding-left: 1rem;
     padding-left: 3rem;  
 }
 .other-user-message .message-card {
-    background-color: var(--first-color);
+    background-color: var(--third-color);
     position: relative;
     left: 2.5rem;
 }
