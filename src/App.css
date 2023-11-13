@@ -370,6 +370,10 @@ padding-left: 1rem;
         margin-left: -1.1rem;
         margin-right: -1.1rem;
     }
+    .message-content {
+        margin-left: -1.1rem;
+        margin-right: -1.1rem;
+    }
     .time-of-sending {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
@@ -434,6 +438,10 @@ padding-left: 1rem;
         .sender-name {
             padding-left: 0.2rem;
             padding-right: 0.2rem;
+            margin-left: -0.5rem;
+            margin-right: -0.5rem;
+        }
+        .message-content {
             margin-left: -0.5rem;
             margin-right: -0.5rem;
         }
