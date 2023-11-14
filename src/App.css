@@ -598,6 +598,9 @@ padding-left: 1rem;
         position: relative;
         left: 3.3rem;
     }
+    #message-box {
+        width: 7rem;
+    }
 }
 
 
