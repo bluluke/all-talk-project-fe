@@ -552,7 +552,8 @@ padding-left: 1rem;
         width: 5rem;
     }
     .enter-non-whistespace-prompt-new-message {
-        font-size: 1rem;
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
     }
     #message-list {
         margin-left: 0;
