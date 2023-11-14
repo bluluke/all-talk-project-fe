@@ -693,10 +693,10 @@ padding-left: 1rem;
         font-size: 1.1rem;
     }
     #chatNameInput {
-        font-size: 1.1rem;
-        height: 1.6rem;
-        width: 9rem;
-        margin-top: 0.2rem;
+        font-size: 1rem;
+        height: 1.4rem;
+        width: 8.3rem;
+        margin-top: -1rem;
     }
     .enter-non-whitespace-prompt-new-chat {
         font-size: 1rem;
