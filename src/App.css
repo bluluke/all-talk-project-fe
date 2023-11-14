@@ -274,7 +274,7 @@ color: var(--first-color);
 padding-left: 1rem;
 }
 .this-user-message > .message-card {
-    background-color: rgba(0, 0, 0, 0.663);
+    background-color: rgba(0, 0, 0, 0.723);
 }
 .other-user-message {
     display: flex;
