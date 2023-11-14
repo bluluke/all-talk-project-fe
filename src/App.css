@@ -680,6 +680,7 @@ padding-left: 1rem;
     .chat-card-container {
         margin-right: 0.5rem;
         margin-left: -2rem;
+        margin-bottom: 0.2rem;
     }
     .delete-chat-button {
         font-size: 0.9rem;
