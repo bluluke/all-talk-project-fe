@@ -688,6 +688,7 @@ padding-left: 1rem;
         margin-bottom: 0.6rem;
     }
     #type-name-for-new-chat-instruction {
+        margin-top: 0.2rem;
         font-size: 1.1rem;
     }
     #click-chat-instruction {
