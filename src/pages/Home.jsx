@@ -55,7 +55,7 @@ export const Home = () => {
                         <button id="create-chat-button">Click to create a new chat</button> 
                         }
                         {onlyWhiteSpaceCharactersPresentRegex.test(newChatName) && 
-                        <p className="enter-non-whistespace-prompt-new-chat">Please enter a non-whitespace character</p>
+                        <p className="enter-non-whitespace-prompt-new-chat">Please enter a non-whitespace character</p>
                         }
 
                     </form>

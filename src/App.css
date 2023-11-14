@@ -121,7 +121,7 @@ input {
 .delete-chat-button:active {
     background-color: var(--red-active-color);
 }
-#click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whistespace-prompt-new-chat {
+#click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, #enter-non-whitespace-prompt-new-chat {
     margin-left: 2.5rem;
 }
 #create-chat-button {
@@ -140,10 +140,10 @@ input {
     margin-right: -1.5rem;
     margin-top: 0.8rem;
 }
-input, .enter-non-whistespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
+input, .enter-non-whitespace-prompt-new-chat, #create-chat-button, .delete-chat-button {
     font-size: 1.5rem;
 }
-.enter-non-whistespace-prompt-new-chat {
+.enter-non-whitespace-prompt-new-chat {
     color: var(--red-color);
     margin-left: 2.4rem;
     margin-top: 0.5rem;
@@ -200,7 +200,7 @@ max-width: 82%;
     margin-right: 1rem;
     margin-top: 0.8rem;
 }
-.enter-non-whistespace-prompt-new-message {
+.enter-non-whitespace-prompt-new-message {
     color: var(--red-color);
     margin-top: 0.5rem;
     font-size: 1.4rem;
@@ -430,7 +430,7 @@ padding-left: 1rem;
             font-size: 1.4rem;
             width: 9rem;
         }
-        .enter-non-whistespace-prompt-new-message {
+        .enter-non-whitespace-prompt-new-message {
             font-size: 1.3rem;
         }
         #message-list {
@@ -509,7 +509,7 @@ padding-left: 1rem;
             font-size: 1.2rem;
             height: 1.8rem;
         }
-        .enter-non-whistespace-prompt-new-message {
+        .enter-non-whitespace-prompt-new-message {
             font-size: 1.1rem;
         }
         #message-list {
@@ -551,7 +551,7 @@ padding-left: 1rem;
         height: 1.6rem;
         width: 5rem;
     }
-    .enter-non-whistespace-prompt-new-message {
+    .enter-non-whitespace-prompt-new-message {
         font-size: 0.8rem;
         margin-top: 0.2rem;
     }
@@ -646,7 +646,7 @@ padding-left: 1rem;
         height: 1.8rem;
         width: 12rem;
     }
-    .enter-non-whistespace-prompt-new-chat {
+    .enter-non-whitespace-prompt-new-chat {
         font-size: 1.4rem;
     }
     #create-chat-button {
@@ -668,7 +668,7 @@ padding-left: 1rem;
 }
 
 @media (max-width: 260px) {
-    #click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, .enter-non-whistespace-prompt-new-chat, #create-chat-button {
+    #click-chat-instruction, #type-name-for-new-chat-instruction, #chatNameInput, .enter-non-whitespace-prompt-new-chat, #create-chat-button {
         margin-left: 0.5rem;
     }
     #header-container {
@@ -698,7 +698,7 @@ padding-left: 1rem;
         width: 9rem;
         margin-top: 0.2rem;
     }
-    .enter-non-whistespace-prompt-new-chat {
+    .enter-non-whitespace-prompt-new-chat {
         font-size: 1.2rem;
     }
     #create-chat-button {
