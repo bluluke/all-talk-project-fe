@@ -546,6 +546,11 @@ padding-left: 1rem;
         width: 10rem;
         height: 1rem;
     }
+    #submit-message {
+        font-size: 1rem;
+        height: 1.6rem;
+        width: 5rem;
+    }
     .enter-non-whistespace-prompt-new-message {
         font-size: 1rem;
     }
