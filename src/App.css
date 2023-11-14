@@ -690,7 +690,9 @@ padding-left: 1rem;
         font-size: 1.1rem;
     }
     #click-chat-instruction {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-top: -1rem;
+        margin-bottom: -0.5rem;
     }
     #chatNameInput {
         font-size: 1rem;
